@@ -5,9 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="A Sanctuary for Building the Shield - Protected employment, financial liberation, meaningful work, and aligned mission.">
   <title>The Order - For Technologists - The Order of Ethical Technologists</title>
+    <!-- Security -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src 'self' data:; font-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
   <link rel="stylesheet" href="../css/style.css">
+
+  <script>
+    (function() {
+      var stored = localStorage.getItem('oet-theme-preference');
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (stored === 'dark' || (!stored && prefersDark)) {
+        document.documentElement.classList.add('dark-mode');
+      }
+    })();
+  </script>
 </head>
 <body class="theme-recruit">
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <nav class="site-nav" aria-label="Main navigation">
     <div class="container">
@@ -19,6 +37,9 @@
       <a href="../faq.html">FAQ</a>
       <a href="../sources.html">Sources</a>
       <a href="../contact.html">Contact</a>
+      <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">
+        <span class="theme-toggle-icon" aria-hidden="true"></span>
+      </button>
     </div>
   </nav>
 
@@ -29,7 +50,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <div class="container">
 
       <section>
@@ -282,5 +303,6 @@
     <p class="footer-copy">&copy; 2025 The Order of Ethical Technologists. All rights reserved.</p>
   </footer>
 
+  <script src="../js/theme.js"></script>
 </body>
 </html>

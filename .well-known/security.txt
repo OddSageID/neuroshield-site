@@ -1,0 +1,11 @@
+# Security Policy for The Order of Ethical Technologists
+# https://securitytxt.org/
+
+Contact: mailto:security@orderoftechnologists.org
+Expires: 2026-12-31T23:59:59.000Z
+Preferred-Languages: en
+Canonical: https://oddsageid.github.io/neuroshield-site/.well-known/security.txt
+Policy: https://oddsageid.github.io/neuroshield-site/transparency.html
+
+# We appreciate responsible disclosure of security vulnerabilities.
+# Please allow us reasonable time to address issues before public disclosure.

@@ -3,11 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta Tags -->
   <meta name="description" content="Frequently Asked Questions about the Order of Ethical Technologists - for sponsors, recruits, and general inquiries.">
+  <meta name="keywords" content="ethical AI FAQ, Order of Technologists questions, AI ethics, faith-based technology">
+  <meta name="author" content="The Order of Ethical Technologists">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://oddsageid.github.io/neuroshield-site/faq.html">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://oddsageid.github.io/neuroshield-site/faq.html">
+  <meta property="og:title" content="FAQ - The Order of Ethical Technologists">
+  <meta property="og:description" content="Frequently Asked Questions about the Order of Ethical Technologists - for sponsors, recruits, and general inquiries.">
+  <meta property="og:site_name" content="The Order of Ethical Technologists">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="FAQ - The Order of Ethical Technologists">
+  <meta name="twitter:description" content="Frequently Asked Questions about the Order of Ethical Technologists.">
+
+  <!-- Security -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src 'self' data:; font-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
   <title>Frequently Asked Questions - The Order of Ethical Technologists</title>
   <link rel="stylesheet" href="css/style.css">
+
+  <script>
+    (function() {
+      var stored = localStorage.getItem('oet-theme-preference');
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (stored === 'dark' || (!stored && prefersDark)) {
+        document.documentElement.classList.add('dark-mode');
+      }
+    })();
+  </script>
 </head>
 <body class="theme-home">
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <nav class="site-nav" aria-label="Main navigation">
     <div class="container">
@@ -19,6 +58,9 @@
       <a href="faq.html" aria-current="page">FAQ</a>
       <a href="sources.html">Sources</a>
       <a href="contact.html">Contact</a>
+      <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">
+        <span class="theme-toggle-icon" aria-hidden="true"></span>
+      </button>
     </div>
   </nav>
 
@@ -29,11 +71,11 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <div class="container">
 
-      <section>
-        <h2>For Potential Sponsors</h2>
+      <section aria-labelledby="sponsor-faq">
+        <h2 id="sponsor-faq">For Potential Sponsors</h2>
 
         <details>
           <summary>Why should we fund this instead of hiring security consultants?</summary>
@@ -101,8 +143,8 @@
         </details>
       </section>
 
-      <section>
-        <h2>For Potential Recruits</h2>
+      <section aria-labelledby="recruit-faq">
+        <h2 id="recruit-faq">For Potential Recruits</h2>
 
         <details>
           <summary>Is this just a non-profit with lower pay?</summary>
@@ -238,8 +280,8 @@
         </details>
       </section>
 
-      <section>
-        <h2>General Questions</h2>
+      <section aria-labelledby="general-faq">
+        <h2 id="general-faq">General Questions</h2>
 
         <details>
           <summary>How is the Order different from existing AI ethics initiatives?</summary>
@@ -326,5 +368,6 @@
     <p class="footer-copy">&copy; 2025 The Order of Ethical Technologists. All rights reserved.</p>
   </footer>
 
+  <script src="js/theme.js"></script>
 </body>
 </html>

@@ -3,11 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta Tags -->
   <meta name="description" content="Faith-based institutions face escalating cyber threats while ethical technologists face systematic displacement.">
+  <meta name="keywords" content="faith institutions cybersecurity, ethical AI, Rome Call, Vatican AI ethics">
+  <meta name="author" content="The Order of Ethical Technologists">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://oddsageid.github.io/neuroshield-site/faith-leaders/problem.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://oddsageid.github.io/neuroshield-site/faith-leaders/problem.html">
+  <meta property="og:title" content="The Problem - For Faith Leaders - The Order of Ethical Technologists">
+  <meta property="og:description" content="Faith-based institutions face escalating cyber threats while ethical technologists face systematic displacement.">
+  <meta property="og:site_name" content="The Order of Ethical Technologists">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="The Problem - For Faith Leaders">
+  <meta name="twitter:description" content="Faith-based institutions face escalating cyber threats.">
+
+  <!-- Security -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src 'self' data:; font-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
   <title>The Problem - For Faith Leaders - The Order of Ethical Technologists</title>
   <link rel="stylesheet" href="../css/style.css">
+
+  <script>
+    (function() {
+      var stored = localStorage.getItem('oet-theme-preference');
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (stored === 'dark' || (!stored && prefersDark)) {
+        document.documentElement.classList.add('dark-mode');
+      }
+    })();
+  </script>
 </head>
 <body class="theme-sponsor">
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <nav class="site-nav" aria-label="Main navigation">
     <div class="container">
@@ -19,6 +58,9 @@
       <a href="../faq.html">FAQ</a>
       <a href="../sources.html">Sources</a>
       <a href="../contact.html">Contact</a>
+      <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">
+        <span class="theme-toggle-icon" aria-hidden="true"></span>
+      </button>
     </div>
   </nav>
 
@@ -29,7 +71,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <div class="container">
 
       <section>
@@ -37,8 +79,8 @@
         <p>Faith-based institutions have become high-value targets in an escalating cyber conflict, while their technologists who prioritize ethics face systematic displacement from the industry.</p>
       </section>
 
-      <section>
-        <h2>Incident Timeline</h2>
+      <section aria-labelledby="timeline-heading">
+        <h2 id="timeline-heading">Incident Timeline</h2>
         <ol class="timeline">
           <li>
             <span class="timeline-date">July 2020</span>
@@ -75,8 +117,8 @@
         </div>
       </section>
 
-      <section>
-        <h2>The Human Cost</h2>
+      <section aria-labelledby="human-cost-heading">
+        <h2 id="human-cost-heading">The Human Cost</h2>
         <p>While institutions face digital threats, the technologists capable of defending them face a different crisis:</p>
 
         <h3>Displacement of Ethical Technologists</h3>
@@ -128,5 +170,6 @@
     <p class="footer-copy">&copy; 2025 The Order of Ethical Technologists. All rights reserved.</p>
   </footer>
 
+  <script src="../js/theme.js"></script>
 </body>
 </html>

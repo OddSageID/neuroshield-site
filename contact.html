@@ -3,11 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta Tags -->
   <meta name="description" content="Contact the Order of Ethical Technologists - for sponsors, recruits, and general inquiries.">
+  <meta name="keywords" content="contact Order of Technologists, ethical AI contact, sponsor ethical AI">
+  <meta name="author" content="The Order of Ethical Technologists">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://oddsageid.github.io/neuroshield-site/contact.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://oddsageid.github.io/neuroshield-site/contact.html">
+  <meta property="og:title" content="Contact - The Order of Ethical Technologists">
+  <meta property="og:description" content="Contact the Order of Ethical Technologists - for sponsors, recruits, and general inquiries.">
+  <meta property="og:site_name" content="The Order of Ethical Technologists">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Contact - The Order of Ethical Technologists">
+  <meta name="twitter:description" content="Contact the Order of Ethical Technologists.">
+
+  <!-- Security -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src 'self' data:; font-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
   <title>Contact - The Order of Ethical Technologists</title>
   <link rel="stylesheet" href="css/style.css">
+
+  <script>
+    (function() {
+      var stored = localStorage.getItem('oet-theme-preference');
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (stored === 'dark' || (!stored && prefersDark)) {
+        document.documentElement.classList.add('dark-mode');
+      }
+    })();
+  </script>
 </head>
 <body class="theme-home">
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <nav class="site-nav" aria-label="Main navigation">
     <div class="container">
@@ -19,6 +58,9 @@
       <a href="faq.html">FAQ</a>
       <a href="sources.html">Sources</a>
       <a href="contact.html" aria-current="page">Contact</a>
+      <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">
+        <span class="theme-toggle-icon" aria-hidden="true"></span>
+      </button>
     </div>
   </nav>
 
@@ -29,11 +71,11 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <div class="container">
 
-      <section>
-        <h2>For Potential Sponsors</h2>
+      <section aria-labelledby="sponsors-contact">
+        <h2 id="sponsors-contact">For Potential Sponsors</h2>
 
         <div class="card">
           <h3>Schedule a Consultation</h3>
@@ -70,8 +112,8 @@
         </div>
       </section>
 
-      <section>
-        <h2>For Potential Recruits</h2>
+      <section aria-labelledby="recruits-contact">
+        <h2 id="recruits-contact">For Potential Recruits</h2>
 
         <div class="card">
           <h3>Express Interest</h3>
@@ -106,48 +148,39 @@
         </div>
       </section>
 
-      <section>
-        <h2>General Inquiries</h2>
+      <section aria-labelledby="general-contact">
+        <h2 id="general-contact">General Inquiries</h2>
 
         <div class="card">
           <p>For media, research, or other questions:</p>
           <ul>
             <li><strong>Email:</strong> <a href="mailto:info@orderoftechnologists.org">info@orderoftechnologists.org</a></li>
-            <li><strong>Crisis Hotline:</strong> 1-800-273-8255</li>
             <li><strong>Location:</strong> Rome</li>
           </ul>
           <p><strong>Response time commitment:</strong> We respond within 48 hours.</p>
-        </div>
-
-        <div class="card">
-          <h3>Website and Social Media</h3>
-          <ul>
-            <li><strong>Main site:</strong> <a href="https://sites.google.com/view/warhammer-origins/home">https://sites.google.com/view/warhammer-origins/home</a></li>
-            <li><strong>Neuroshield.Life:</strong> <a href="http://neuroshield.life">http://neuroshield.life</a></li>
-          </ul>
         </div>
       </section>
 
       <section>
         <div class="two-paths">
-          <div class="path-card path-sponsor">
+          <article class="path-card path-sponsor">
             <h3>For Faith Leaders</h3>
             <p>Explore how your institution can sponsor ethical AI infrastructure.</p>
             <a href="faith-leaders/problem.html" class="btn btn-sponsor">Learn More &rarr;</a>
-          </div>
+          </article>
 
-          <div class="path-card path-recruit">
+          <article class="path-card path-recruit">
             <h3>For Technologists</h3>
             <p>Discover a protected vocation building ethical AI systems.</p>
             <a href="technologists/call.html" class="btn btn-recruit">Learn More &rarr;</a>
-          </div>
+          </article>
         </div>
       </section>
 
       <section>
-        <div class="pull-quote">
+        <blockquote class="pull-quote">
           "The conductor's choice is yours to make. Choose the wisdom of the shield. Or remain in the tyranny of the cage. But choose consciously."
-        </div>
+        </blockquote>
       </section>
 
     </div>
@@ -175,5 +208,6 @@
     <p class="footer-copy">&copy; 2025 The Order of Ethical Technologists. All rights reserved.</p>
   </footer>
 
+  <script src="js/theme.js"></script>
 </body>
 </html>

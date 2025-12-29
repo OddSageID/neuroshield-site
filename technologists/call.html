@@ -3,11 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta Tags -->
   <meta name="description" content="You were cast out for refusing to build the cage. You raised concerns about bias. You questioned the algorithm. And for that, you were terminated.">
+  <meta name="keywords" content="ethical technologists, AI ethics jobs, tech whistleblower, ethical AI careers">
+  <meta name="author" content="The Order of Ethical Technologists">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://oddsageid.github.io/neuroshield-site/technologists/call.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://oddsageid.github.io/neuroshield-site/technologists/call.html">
+  <meta property="og:title" content="The Call - For Technologists - The Order of Ethical Technologists">
+  <meta property="og:description" content="You were cast out for refusing to build the cage. Discover a protected vocation building ethical AI.">
+  <meta property="og:site_name" content="The Order of Ethical Technologists">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="The Call - For Technologists">
+  <meta name="twitter:description" content="You were cast out for refusing to build the cage.">
+
+  <!-- Security -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src 'self' data:; font-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
   <title>The Call - For Technologists - The Order of Ethical Technologists</title>
   <link rel="stylesheet" href="../css/style.css">
+
+  <script>
+    (function() {
+      var stored = localStorage.getItem('oet-theme-preference');
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (stored === 'dark' || (!stored && prefersDark)) {
+        document.documentElement.classList.add('dark-mode');
+      }
+    })();
+  </script>
 </head>
 <body class="theme-recruit">
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <nav class="site-nav" aria-label="Main navigation">
     <div class="container">
@@ -19,6 +58,9 @@
       <a href="../faq.html">FAQ</a>
       <a href="../sources.html">Sources</a>
       <a href="../contact.html">Contact</a>
+      <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">
+        <span class="theme-toggle-icon" aria-hidden="true"></span>
+      </button>
     </div>
   </nav>
 
@@ -29,7 +71,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <div class="container">
 
       <section>
@@ -40,8 +82,8 @@
         <p><strong>You were fired for choosing ethics over expedience.</strong></p>
       </section>
 
-      <section>
-        <h2>The Weight You Carry</h2>
+      <section aria-labelledby="weight-heading">
+        <h2 id="weight-heading">The Weight You Carry</h2>
         <p><strong>$150,000 in student debt.</strong><br>
         Six years of education to become the kind of technologist who could build systems that actually help people.</p>
 
@@ -54,8 +96,8 @@
         <p><strong>The cage tightens.</strong></p>
       </section>
 
-      <section>
-        <h2>You Are Not Alone</h2>
+      <section aria-labelledby="not-alone-heading">
+        <h2 id="not-alone-heading">You Are Not Alone</h2>
         <p>Across the industry, ethical AI researchers, cybersecurity specialists, and principled engineers face the same choice:</p>
         <ul>
           <li>Compromise your values and keep your job</li>
@@ -70,8 +112,8 @@
         <p><strong>The pattern is clear:</strong> Corporations systematically remove those who prioritize human dignity over profit.</p>
       </section>
 
-      <section>
-        <h2>What You Know That Others Don't</h2>
+      <section aria-labelledby="knowledge-heading">
+        <h2 id="knowledge-heading">What You Know That Others Don't</h2>
         <p>You've seen the code. You understand what behavioral AI can do when deployed without oversight:</p>
         <ul>
           <li>Pre-conscious manipulation through interface design</li>
@@ -85,8 +127,8 @@
         <p>And you refused to build the cage.</p>
       </section>
 
-      <section>
-        <h2>The Question You Face</h2>
+      <section aria-labelledby="question-heading">
+        <h2 id="question-heading">The Question You Face</h2>
         <p>How long can you hold out?</p>
         <p>How many months before the debt collectors escalate?</p>
         <p>How many rejections before you accept a position that requires you to compromise?</p>
@@ -96,10 +138,10 @@
       </section>
 
       <section>
-        <div class="callout">
+        <blockquote class="callout">
           <p><em>"I spent three years building healthcare AI. When I discovered our authorization algorithm was denying care to dialysis patients at twice the rate of others, I reported it. I was escorted out within a week."</em></p>
           <p>&mdash; Former Senior ML Engineer, Major Healthcare Tech Company</p>
-        </div>
+        </blockquote>
       </section>
 
       <section>
@@ -140,5 +182,6 @@
     <p class="footer-copy">&copy; 2025 The Order of Ethical Technologists. All rights reserved.</p>
   </footer>
 
+  <script src="../js/theme.js"></script>
 </body>
 </html>
