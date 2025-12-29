@@ -1,0 +1,12 @@
+# Robots.txt for The Order of Ethical Technologists
+# https://orderoftechnologists.org
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://oddsageid.github.io/neuroshield-site/sitemap.xml
+
+# Disallow sensitive paths (none currently, but documented for future)
+# Disallow: /admin/
+# Disallow: /private/

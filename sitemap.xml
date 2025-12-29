@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Homepage -->
+  <url>
+    <loc>https://oddsageid.github.io/neuroshield-site/</loc>
+    <lastmod>2025-12-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Main Pages -->
+  <url>
+    <loc>https://oddsageid.github.io/neuroshield-site/faq.html</loc>
+    <lastmod>2025-12-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://oddsageid.github.io/neuroshield-site/sources.html</loc>
+    <lastmod>2025-12-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://oddsageid.github.io/neuroshield-site/contact.html</loc>
+    <lastmod>2025-12-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Faith Leaders Section -->
+  <url>
+    <loc>https://oddsageid.github.io/neuroshield-site/faith-leaders/problem.html</loc>
+    <lastmod>2025-12-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://oddsageid.github.io/neuroshield-site/faith-leaders/gap.html</loc>
+    <lastmod>2025-12-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://oddsageid.github.io/neuroshield-site/faith-leaders/solution.html</loc>
+    <lastmod>2025-12-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://oddsageid.github.io/neuroshield-site/faith-leaders/ask.html</loc>
+    <lastmod>2025-12-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Technologists Section -->
+  <url>
+    <loc>https://oddsageid.github.io/neuroshield-site/technologists/call.html</loc>
+    <lastmod>2025-12-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://oddsageid.github.io/neuroshield-site/technologists/order.html</loc>
+    <lastmod>2025-12-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://oddsageid.github.io/neuroshield-site/technologists/choice.html</loc>
+    <lastmod>2025-12-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://oddsageid.github.io/neuroshield-site/technologists/join.html</loc>
+    <lastmod>2025-12-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- About Section -->
+  <url>
+    <loc>https://oddsageid.github.io/neuroshield-site/about/rome-call.html</loc>
+    <lastmod>2025-12-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://oddsageid.github.io/neuroshield-site/about/displacement-pattern.html</loc>
+    <lastmod>2025-12-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Legal Pages -->
+  <url>
+    <loc>https://oddsageid.github.io/neuroshield-site/privacy.html</loc>
+    <lastmod>2025-12-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://oddsageid.github.io/neuroshield-site/terms.html</loc>
+    <lastmod>2025-12-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://oddsageid.github.io/neuroshield-site/accessibility.html</loc>
+    <lastmod>2025-12-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://oddsageid.github.io/neuroshield-site/transparency.html</loc>
+    <lastmod>2025-12-29</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://oddsageid.github.io/neuroshield-site/cookie-notice.html</loc>
+    <lastmod>2025-12-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>
