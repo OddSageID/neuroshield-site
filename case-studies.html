@@ -1,68 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Case Studies documenting real incidents: Vatican breaches, healthcare AI denials, displaced ethical technologists, and infrastructure gatekeeping.">
-  <meta name="keywords" content="AI ethics case studies, Vatican cyberattack, healthcare AI denials, ethical technologists, tech industry displacement">
-  <meta name="author" content="The Order of Ethical Technologists">
-  <meta name="robots" content="index, follow">
-
-  <!-- Canonical URL -->
-  <link rel="canonical" href="https://oddsageid.github.io/neuroshield-site/case-studies.html">
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://oddsageid.github.io/neuroshield-site/case-studies.html">
-  <meta property="og:title" content="Case Studies - The Order of Ethical Technologists">
-  <meta property="og:description" content="Documented incidents that reveal why the Order must exist: institutional vulnerabilities, displaced technologists, and infrastructure gatekeeping.">
-  <meta property="og:site_name" content="The Order of Ethical Technologists">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Case Studies - The Order of Ethical Technologists">
-  <meta name="twitter:description" content="When Principles Meet Reality - documented incidents that demand action.">
-
-  <!-- Security -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src 'self' data:; font-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
-  <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <meta http-equiv="X-Frame-Options" content="DENY">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
-
-  <title>Case Studies - The Order of Ethical Technologists</title>
-  <link rel="stylesheet" href="css/style.css">
-
-  <script>
-    (function() {
-      var stored = localStorage.getItem('oet-theme-preference');
-      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (stored === 'dark' || (!stored && prefersDark)) {
-        document.documentElement.classList.add('dark-mode');
-      }
-    })();
-  </script>
-</head>
-<body class="theme-home">
-
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-
-  <nav class="site-nav" aria-label="Main navigation">
-    <div class="container">
-      <a href="index.html">Home</a>
-      <a href="faith-leaders/problem.html">For Faith Leaders</a>
-      <a href="technologists/call.html">For Technologists</a>
-      <a href="case-studies.html" aria-current="page">Case Studies</a>
-      <a href="about/rome-call.html">Rome Call</a>
-      <a href="faq.html">FAQ</a>
-      <a href="sources.html">Sources</a>
-      <a href="contact.html">Contact</a>
-      <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">
-        <span class="theme-toggle-icon" aria-hidden="true"></span>
-      </button>
-    </div>
-  </nav>
+---
+layout: default
+title: Case Studies - The Order of Ethical Technologists
+body_class: theme-home
+---
 
   <header class="hero hero-home">
     <div class="container">
@@ -926,14 +866,14 @@
             <h3>For Faith Leaders</h3>
             <p>You can deploy the same AI systems secular hospitals deploy. Optimize for cost like everyone else. Tell yourself your mission statement makes you different.</p>
             <p><strong>Or you can:</strong> Build AI that actually aligns with your values. Prove your mission governs your technology.</p>
-            <a href="faith-leaders/problem.html" class="btn btn-sponsor">Learn More &rarr;</a>
+            <a href="{{ site.baseurl }}/faith-leaders/problem.html" class="btn btn-sponsor">Learn More &rarr;</a>
           </article>
 
           <article class="path-card path-recruit">
             <h3>For Technologists</h3>
             <p>You can build systems that deny care to maximize profit. Tell yourself "I'm just building what I'm told."</p>
             <p><strong>Or you can:</strong> Refuse to build systems optimized against patient outcomes. Join institutions that will protect you when you say no.</p>
-            <a href="technologists/call.html" class="btn btn-recruit">Learn More &rarr;</a>
+            <a href="{{ site.baseurl }}/technologists/call.html" class="btn btn-recruit">Learn More &rarr;</a>
           </article>
         </div>
 
@@ -944,29 +884,3 @@
 
     </div>
   </main>
-
-  <footer class="site-footer">
-    <p class="footer-tagline">"Building the Shield, Refusing the Cage"</p>
-    <nav class="footer-nav" aria-label="Footer navigation">
-      <a href="index.html">Home</a>
-      <a href="faith-leaders/problem.html">For Faith Leaders</a>
-      <a href="technologists/call.html">For Technologists</a>
-      <a href="case-studies.html">Case Studies</a>
-      <a href="about/rome-call.html">Rome Call</a>
-      <a href="faq.html">FAQ</a>
-      <a href="sources.html">Sources</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <nav class="footer-legal" aria-label="Legal links">
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Service</a>
-      <a href="accessibility.html">Accessibility</a>
-      <a href="transparency.html">Transparency Report</a>
-      <a href="cookie-notice.html">Cookie Notice</a>
-    </nav>
-    <p class="footer-copy">&copy; 2025 The Order of Ethical Technologists. All rights reserved.</p>
-  </footer>
-
-  <script src="js/theme.js"></script>
-</body>
-</html>

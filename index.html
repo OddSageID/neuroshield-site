@@ -1,160 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+---
+layout: default
+title: The Order of Ethical Technologists
+body_class: theme-home
+---
 
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="The Order of Ethical Technologists - A Faith-Based Sanctuary for Building Ethical AI. Turning the Rome Call's Principles into Operational Reality.">
-  <meta name="keywords" content="ethical AI, Rome Call, AI ethics, faith-based technology, technologists, ethical technology">
-  <meta name="author" content="The Order of Ethical Technologists">
-  <meta name="robots" content="index, follow">
+<header class="hero hero-home">
+  <div class="container">
+    <h1>The Order of Ethical Technologists</h1>
+    <p class="tagline">A Faith-Based Sanctuary for Building Ethical AI</p>
+    <p class="subtitle">Turning the Rome Call's Principles into Operational Reality</p>
+  </div>
+</header>
 
-  <!-- Canonical URL -->
-  <link rel="canonical" href="https://oddsageid.github.io/neuroshield-site/">
+<main id="main-content">
+  <div class="container">
 
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://oddsageid.github.io/neuroshield-site/">
-  <meta property="og:title" content="The Order of Ethical Technologists">
-  <meta property="og:description" content="A Faith-Based Sanctuary for Building Ethical AI. Turning the Rome Call's Principles into Operational Reality.">
-  <meta property="og:site_name" content="The Order of Ethical Technologists">
-  <meta property="og:locale" content="en_US">
+    <section aria-labelledby="crisis-heading">
+      <h2 id="crisis-heading">The Crisis</h2>
+      <p>Automated attacks outpace human defense systems. Healthcare AI denies treatment at 16 times the rate of human review. Technologists who prioritize ethics over profit face termination, blacklisting, and financial ruin.</p>
+      <p>The Vatican's Rome Call for AI Ethics established principles. The November 2025 conference convened global dialogue. But principles without infrastructure remain aspirational.</p>
+      <p><strong>The gap between ethical vision and operational reality demands a solution.</strong></p>
+    </section>
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="The Order of Ethical Technologists">
-  <meta name="twitter:description" content="A Faith-Based Sanctuary for Building Ethical AI. Turning the Rome Call's Principles into Operational Reality.">
+    <section aria-labelledby="paths-heading">
+      <h2 id="paths-heading" class="sr-only">Two Paths Forward</h2>
+      <div class="two-paths">
 
-  <!-- Security: Content Security Policy -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src 'self' data:; font-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
-  <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <meta http-equiv="X-Frame-Options" content="DENY">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
+        <article class="path-card path-sponsor">
+          <h3>For Faith Leaders</h3>
+          <p>Are you seeking to sponsor ethical AI work?</p>
+          <p>Explore how your institution can support the Order, providing sanctuary for displaced technologists while building transparent, human-augmented AI systems aligned with Rome Call principles.</p>
+          <a href="{{ site.baseurl }}/faith-leaders/problem.html" class="btn btn-sponsor">For Faith Leaders &rarr;</a>
+        </article>
 
-  <title>The Order of Ethical Technologists</title>
-  <link rel="stylesheet" href="css/style.css">
+        <article class="path-card path-recruit">
+          <h3>For Technologists</h3>
+          <p>Have you been cast aside for choosing ethics over profit?</p>
+          <p>Discover a protected vocation offering debt relief in exchange for building the ethical AI systems our world desperately needs.</p>
+          <a href="{{ site.baseurl }}/technologists/call.html" class="btn btn-recruit">For Technologists &rarr;</a>
+        </article>
 
-  <!-- Inline critical theme detection to prevent flash -->
-  <script>
-    (function() {
-      var stored = localStorage.getItem('oet-theme-preference');
-      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (stored === 'dark' || (!stored && prefersDark)) {
-        document.documentElement.classList.add('dark-mode');
-      }
-    })();
-  </script>
-</head>
-<body class="theme-home">
+      </div>
+    </section>
 
-  <a href="#main-content" class="skip-link">Skip to main content</a>
+    <section aria-labelledby="stats-heading">
+      <h2 id="stats-heading" class="sr-only">Key Statistics</h2>
 
-  <nav class="site-nav" aria-label="Main navigation">
-    <div class="container">
-      <a href="index.html" aria-current="page">Home</a>
-      <a href="faith-leaders/problem.html">For Faith Leaders</a>
-      <a href="technologists/call.html">For Technologists</a>
-      <a href="case-studies.html">Case Studies</a>
-      <a href="about/rome-call.html">Rome Call</a>
-      <a href="about/displacement-pattern.html">Field Guide</a>
-      <a href="faq.html">FAQ</a>
-      <a href="sources.html">Sources</a>
-      <a href="contact.html">Contact</a>
-      <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">
-        <span class="theme-toggle-icon" aria-hidden="true"></span>
-      </button>
-    </div>
-  </nav>
+      <div class="callout callout-stat">
+        <span class="stat-number">50%+</span>
+        <p>of global web traffic is now automated bots (Thales Group, 2025)</p>
+        <p>Traditional human-speed defenses cannot counter machine-speed attacks.</p>
+      </div>
 
-  <header class="hero hero-home">
-    <div class="container">
-      <h1>The Order of Ethical Technologists</h1>
-      <p class="tagline">A Faith-Based Sanctuary for Building Ethical AI</p>
-      <p class="subtitle">Turning the Rome Call's Principles into Operational Reality</p>
-    </div>
-  </header>
+      <div class="callout callout-stat">
+        <span class="stat-number">16&times;</span>
+        <p>Healthcare AI denial rates compared to human review (AMA, 2025)</p>
+        <p>Technology optimized for profit, not patient care.</p>
+      </div>
+    </section>
 
-  <main id="main-content">
-    <div class="container">
+    <section aria-labelledby="quote-heading">
+      <h2 id="quote-heading" class="sr-only">Mission Statement</h2>
+      <blockquote class="pull-quote">
+        "The same infrastructure that delivers knowledge, security, and care can also deliver manipulation, surveillance, and denial. The difference is human oversight and ethical restraint."
+      </blockquote>
+    </section>
 
-      <section aria-labelledby="crisis-heading">
-        <h2 id="crisis-heading">The Crisis</h2>
-        <p>Automated attacks outpace human defense systems. Healthcare AI denies treatment at 16 times the rate of human review. Technologists who prioritize ethics over profit face termination, blacklisting, and financial ruin.</p>
-        <p>The Vatican's Rome Call for AI Ethics established principles. The November 2025 conference convened global dialogue. But principles without infrastructure remain aspirational.</p>
-        <p><strong>The gap between ethical vision and operational reality demands a solution.</strong></p>
-      </section>
-
-      <section aria-labelledby="paths-heading">
-        <h2 id="paths-heading" class="sr-only">Two Paths Forward</h2>
-        <div class="two-paths">
-
-          <article class="path-card path-sponsor">
-            <h3>For Faith Leaders</h3>
-            <p>Are you seeking to sponsor ethical AI work?</p>
-            <p>Explore how your institution can support the Order, providing sanctuary for displaced technologists while building transparent, human-augmented AI systems aligned with Rome Call principles.</p>
-            <a href="faith-leaders/problem.html" class="btn btn-sponsor">For Faith Leaders &rarr;</a>
-          </article>
-
-          <article class="path-card path-recruit">
-            <h3>For Technologists</h3>
-            <p>Have you been cast aside for choosing ethics over profit?</p>
-            <p>Discover a protected vocation offering debt relief in exchange for building the ethical AI systems our world desperately needs.</p>
-            <a href="technologists/call.html" class="btn btn-recruit">For Technologists &rarr;</a>
-          </article>
-
-        </div>
-      </section>
-
-      <section aria-labelledby="stats-heading">
-        <h2 id="stats-heading" class="sr-only">Key Statistics</h2>
-
-        <div class="callout callout-stat">
-          <span class="stat-number">50%+</span>
-          <p>of global web traffic is now automated bots (Thales Group, 2025)</p>
-          <p>Traditional human-speed defenses cannot counter machine-speed attacks.</p>
-        </div>
-
-        <div class="callout callout-stat">
-          <span class="stat-number">16&times;</span>
-          <p>Healthcare AI denial rates compared to human review (AMA, 2025)</p>
-          <p>Technology optimized for profit, not patient care.</p>
-        </div>
-      </section>
-
-      <section aria-labelledby="quote-heading">
-        <h2 id="quote-heading" class="sr-only">Mission Statement</h2>
-        <blockquote class="pull-quote">
-          "The same infrastructure that delivers knowledge, security, and care can also deliver manipulation, surveillance, and denial. The difference is human oversight and ethical restraint."
-        </blockquote>
-      </section>
-
-    </div>
-  </main>
-
-  <footer class="site-footer">
-    <p class="footer-tagline">"Building the Shield, Refusing the Cage"</p>
-    <nav class="footer-nav" aria-label="Footer navigation">
-      <a href="index.html">Home</a>
-      <a href="faith-leaders/problem.html">For Faith Leaders</a>
-      <a href="technologists/call.html">For Technologists</a>
-      <a href="case-studies.html">Case Studies</a>
-      <a href="about/rome-call.html">Rome Call</a>
-      <a href="about/displacement-pattern.html">Field Guide</a>
-      <a href="faq.html">FAQ</a>
-      <a href="sources.html">Sources</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <nav class="footer-legal" aria-label="Legal links">
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Service</a>
-      <a href="accessibility.html">Accessibility</a>
-      <a href="transparency.html">Transparency Report</a>
-      <a href="cookie-notice.html">Cookie Notice</a>
-    </nav>
-    <p class="footer-copy">&copy; 2025 The Order of Ethical Technologists. All rights reserved.</p>
-  </footer>
-
-  <script src="js/theme.js"></script>
-</body>
-</html>
+  </div>
+</main>
