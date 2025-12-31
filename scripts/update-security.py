@@ -1,19 +1,14 @@
 #!/usr/bin/env python3
 """
 Update security headers in all HTML files.
-Replaces existing CSP with hardened version and standardizes inline script.
+Replaces existing CSP with hardened version and standardizes security meta tags.
 """
 
-import os
 import re
-import sys
 from pathlib import Path
 
-# The new strict CSP with script hash
-NEW_CSP = "default-src 'none'; script-src 'self' 'sha256-WX4a73Q06DtD4MP8BNJwtJf9CJ0IIXsYXadYwOvXEi8='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;"
-
-# The minified inline script (must match the hash above)
-NEW_INLINE_SCRIPT = '<script>(function(){var s=localStorage.getItem("oet-theme-preference");var p=window.matchMedia("(prefers-color-scheme: dark)").matches;if(s==="dark"||(!s&&p)){document.documentElement.classList.add("dark-mode");}})()</script>'
+# The new strict CSP without inline script hashes
+NEW_CSP = "default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;"
 
 # New security meta tags block
 NEW_SECURITY_BLOCK = f'''<!-- Security Headers -->
@@ -64,20 +59,7 @@ def update_html_file(filepath):
             )
             changes.append("Added Permissions-Policy")
 
-    # 4. Update inline script to standardized version
-    # Match various forms of the theme detection script
-    inline_script_patterns = [
-        r'<script>\s*\(function\(\)\s*\{[^<]*oet-theme-preference[^<]*\}\s*\)\s*\(\s*\)\s*;?\s*</script>',
-        r'<script>\s*\(function\s*\(\)\s*\{[^}]*localStorage\.getItem\s*\([^)]*oet-theme-preference[^<]*</script>',
-    ]
-
-    for pattern in inline_script_patterns:
-        if re.search(pattern, content, re.IGNORECASE | re.DOTALL):
-            content = re.sub(pattern, NEW_INLINE_SCRIPT, content, flags=re.IGNORECASE | re.DOTALL)
-            changes.append("Updated inline script")
-            break
-
-    # 5. Remove Google Fonts references (we're self-hosting)
+    # 4. Remove Google Fonts references (we're self-hosting)
     google_fonts_patterns = [
         r'\s*<link\s+rel=["\']preconnect["\'][^>]*fonts\.googleapis\.com[^>]*>',
         r'\s*<link\s+rel=["\']preconnect["\'][^>]*fonts\.gstatic\.com[^>]*>',
@@ -89,7 +71,7 @@ def update_html_file(filepath):
             content = re.sub(pattern, '', content, flags=re.IGNORECASE)
             changes.append("Removed Google Fonts reference")
 
-    # 6. Add fonts.css reference if not present (for self-hosted fonts)
+    # 5. Add fonts.css reference if not present (for self-hosted fonts)
     if 'fonts.css' not in content and 'Crimson Pro' in content or 'Source Sans Pro' in content:
         # Find the style.css link and add fonts.css before it
         style_pattern = r'(<link\s+rel=["\']stylesheet["\']\s+href=["\'][^"\']*style\.css["\'][^>]*>)'

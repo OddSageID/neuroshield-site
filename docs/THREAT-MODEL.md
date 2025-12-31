@@ -19,8 +19,7 @@
 |-------|------|----------|----------------------|
 | 21 HTML pages | Static content | Root and subdirectories | None |
 | style.css | Stylesheet | /css/ | None |
-| theme.js | JavaScript | /js/ | None |
-| Fonts | Typography | Google Fonts CDN | fonts.googleapis.com, fonts.gstatic.com |
+| Fonts | Typography | /fonts/ | None |
 
 ---
 
@@ -31,19 +30,18 @@
 - **Risk Level:** Low
 - **Vectors:** GitHub account compromise, DNS hijacking, CDN cache poisoning
 
-### 2.2 JavaScript
-- **Surface:** Single theme.js file (~113 lines)
-- **Risk Level:** Low
-- **Vectors:** Supply chain injection (if modified), DOM XSS via dynamic content
-- **Current Status:** ✓ No eval, innerHTML, or dangerous patterns detected
+### 2.2 Client-Side Scripts
+- **Surface:** No first-party JavaScript shipped
+- **Risk Level:** Very Low
+- **Vectors:** Not applicable
 
 ### 2.3 External Resources
-- **Surface:** Google Fonts (fonts.googleapis.com, fonts.gstatic.com)
-- **Risk Level:** Medium
-- **Vectors:** CDN compromise, man-in-middle, malicious CSS injection
+- **Surface:** Self-hosted fonts
+- **Risk Level:** Low
+- **Vectors:** Local asset tampering via repo compromise
 
 ### 2.4 User Interactions
-- **Surface:** Links, theme toggle, mobile navigation
+- **Surface:** Links, mobile navigation
 - **Risk Level:** Very Low
 - **Vectors:** Limited - no forms, no user input processing
 
@@ -66,7 +64,6 @@
 
 **Mitigations Implemented:**
 - CSP `script-src 'self'` blocks external scripts
-- CSP `script-src` with hash for inline theme script
 - No dynamic HTML injection in JavaScript
 - No URL parameter processing
 
@@ -210,7 +207,7 @@ For complete security header enforcement, consider:
 
 | Threat | Severity | Mitigation | Status |
 |--------|----------|------------|--------|
-| XSS via inline script | High | CSP with script hash | ✓ Implemented |
+| XSS via inline script | Low | No inline scripts shipped | ✓ Implemented |
 | DOM XSS | High | No dangerous sinks | ✓ Verified |
 | Clickjacking | Medium | frame-ancestors 'none' | ✓ Implemented |
 | Supply chain (fonts) | Medium | Self-hosted fonts | ✓ Implemented |

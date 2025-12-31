@@ -6,11 +6,8 @@ set -e
 
 echo "Updating security headers in all HTML files..."
 
-# The new CSP - strict default-src 'none' with hash for inline script
-NEW_CSP="default-src 'none'; script-src 'self' 'sha256-rCIVVGjACCf0oGWsJi531YsuqjBAOL9qK4aWIxFrZWk='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;"
-
-# The minified inline script (must match the hash above)
-NEW_INLINE_SCRIPT='<script>(function(){var s=localStorage.getItem('\''oet-theme-preference'\'');var p=window.matchMedia('\''(prefers-color-scheme: dark)'\'').matches;if(s==='\''dark'\''||(!s&&p)){document.documentElement.classList.add('\''dark-mode'\'');}})()</script>'
+# The new CSP - strict default-src 'none' with no inline script hashes
+NEW_CSP="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;"
 
 # Process each HTML file
 find . -name "*.html" -not -path "./_site/*" -not -path "./node_modules/*" -not -path "./.git/*" | while read -r file; do
@@ -56,14 +53,6 @@ if 'Permissions-Policy' not in content:
             flags=re.IGNORECASE
         )
         print(f"  Added Permissions-Policy")
-
-# Update inline script to minified version with correct hash
-old_script_pattern = r'<script>\s*\(function\(\)\s*\{[^<]*oet-theme-preference[^<]*\}\)\(\);\s*</script>'
-new_script = '<script>(function(){var s=localStorage.getItem("oet-theme-preference");var p=window.matchMedia("(prefers-color-scheme: dark)").matches;if(s==="dark"||(!s&&p)){document.documentElement.classList.add("dark-mode");}})()</script>'
-
-if re.search(old_script_pattern, content, re.IGNORECASE | re.DOTALL):
-    content = re.sub(old_script_pattern, new_script, content, flags=re.IGNORECASE | re.DOTALL)
-    print(f"  Updated inline script")
 
 with open('$file', 'w', encoding='utf-8') as f:
     f.write(content)
