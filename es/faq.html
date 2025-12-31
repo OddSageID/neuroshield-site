@@ -1,7 +1,6 @@
 ---
 lang: es
 ref: faq
-title: Preguntas Frecuentes
 ---
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: 'en' }}" dir="{% if page.lang == 'ar' %}rtl{% else %}ltr{% endif %}">
@@ -9,66 +8,350 @@ title: Preguntas Frecuentes
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="Esta p?gina es un marcador de traducci?n. La versi?n en ingl?s es la autorizada.">
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Preguntas frecuentes sobre la Orden de Tecnólogos Éticos: para patrocinadores, candidatos y consultas generales.">
+  <meta name="keywords" content="FAQ de IA ética, preguntas sobre la Orden de Tecnólogos, ética de la IA, tecnología basada en la fe">
   <meta name="author" content="The Order of Ethical Technologists">
   <meta name="robots" content="index, follow">
-  {% include canonical.html %}
-{% include hreflang.html %}
 
+  <!-- Canonical URL -->
+  {% include canonical.html %}
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://oddsageid.github.io/neuroshield-site/es/faq.html">
+  <meta property="og:title" content="Preguntas frecuentes - The Order of Ethical Technologists">
+  <meta property="og:description" content="Preguntas frecuentes sobre la Orden de Tecnólogos Éticos: para patrocinadores, candidatos y consultas generales.">
+  <meta property="og:site_name" content="The Order of Ethical Technologists">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Preguntas frecuentes - The Order of Ethical Technologists">
+  <meta name="twitter:description" content="Preguntas frecuentes sobre la Orden de Tecnólogos Éticos.">
+
+  <!-- Security -->
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="X-Frame-Options" content="DENY">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta http-equiv="Permissions-Policy" content="accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=(), interest-cohort=()">
 
-  <title>Preguntas Frecuentes | The Order of Ethical Technologists</title>
+  <title>Preguntas frecuentes - The Order of Ethical Technologists</title>
+
+  <!-- Web Fonts - Institutional Typography -->
 
   <link rel="stylesheet" href="{{ '/css/fonts.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}">
+  {% include hreflang.html %}
 </head>
 <body class="theme-home">
 
-  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
   {% include nav.html %}
 
-
   <header class="hero hero-shared">
     <div class="container container-wide">
-      <p class="breadcrumb">FAQ</p>
-      <h1>Preguntas Frecuentes</h1>
+      <h1>Preguntas frecuentes</h1>
+      <p>Preguntas de ambas audiencias</p>
     </div>
   </header>
 
   <main id="main-content">
     <div class="container">
-      <section class="section">
-        <p>Esta p?gina es un marcador de traducci?n. La versi?n en ingl?s es la autorizada.</p>
+
+      <section aria-labelledby="sponsor-faq" class="section">
+        <h2 id="sponsor-faq">Para posibles patrocinadores</h2>
+
+        <details>
+          <summary>¿Por qué deberíamos financiar esto en lugar de contratar consultores de seguridad?</summary>
+          <div>
+            <p>Los consultores construyen soluciones temporales optimizadas para horas facturables. La Orden construye infraestructura permanente alineada con sus valores, atendida por tecnólogos que usted ha liberado de la coerción corporativa.</p>
+            <h4>Comparación de costos:</h4>
+            <ul>
+              <li><strong>Firma de consultoría importante en ciberseguridad:</strong> $500K&ndash;$2M/año, continuo</li>
+              <li><strong>La Orden:</strong> $270K/año por tecnólogo (incluido alivio de deuda), desarrollo de capacidad permanente</li>
+            </ul>
+            <h4>Diferencia de valor:</h4>
+            <ul>
+              <li><strong>Consultores:</strong> Orientados al beneficio, temporales, soluciones de caja negra</li>
+              <li><strong>La Orden:</strong> Alineada con la misión, permanente, sistemas transparentes</li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>¿Cómo garantizamos calidad y rendición de cuentas?</summary>
+          <div>
+            <p>Gobernanza de tres capas:</p>
+            <ol>
+              <li><strong>Técnica:</strong> Revisión por pares, auditorías de código, métricas de rendimiento</li>
+              <li><strong>Ética:</strong> Revisiones de un consejo de ética externo, informes de transparencia</li>
+              <li><strong>Institucional:</strong> Supervisión del consejo de gobernanza del patrocinador</li>
+            </ol>
+            <p>Además: períodos de prueba, contratos renovables, estándares de rendimiento claros.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>¿Cuál es nuestra responsabilidad si los sistemas fallan o causan daño?</summary>
+          <div>
+            <p>La estructura de gobernanza compartida distribuye la responsabilidad de manera adecuada:</p>
+            <ul>
+              <li><strong>Fallos técnicos:</strong> La Orden mantiene un seguro de responsabilidad profesional</li>
+              <li><strong>Decisiones de despliegue:</strong> La institución patrocinadora conserva el control</li>
+              <li><strong>Violaciones éticas:</strong> Responsabilidad conjunta con protocolos de remediación</li>
+            </ul>
+            <p>La estructura legal crea separación entre las operaciones de la Orden y la responsabilidad del patrocinador, manteniendo la supervisión.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>¿Podemos terminar nuestro patrocinio si no estamos satisfechos?</summary>
+          <div>
+            <p>Sí. Los acuerdos de patrocinio incluyen:</p>
+            <ul>
+              <li>Períodos de revisión anual</li>
+              <li>Aviso de 90 días para retirarse</li>
+              <li>Planes de transición para los tecnólogos patrocinados</li>
+              <li>Reembolsos prorrateados por fondos no utilizados (si aplica)</li>
+            </ul>
+            <p>Queremos patrocinadores comprometidos, no renuentes.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>¿Cuántos patrocinadores ya están comprometidos?</summary>
+          <div>
+            <p>Estado actual: conversaciones exploratorias con múltiples instituciones de tradiciones católica, LDS, ortodoxa y protestante.</p>
+            <p>Esta es la etapa fundacional. Los patrocinadores tempranos tienen máxima influencia en la estructura y la dirección.</p>
+          </div>
+        </details>
       </section>
+
+      <section aria-labelledby="recruit-faq" class="section">
+        <h2 id="recruit-faq">Para posibles candidatos</h2>
+
+        <details>
+          <summary>¿Esto es solo una organización sin fines de lucro con menor salario?</summary>
+          <div>
+            <p>No. Salario + alivio de deuda = compensación total competitiva.</p>
+            <h4>Comparación:</h4>
+            <ul>
+              <li><strong>Big Tech:</strong> $150K de salario + compromiso ético + riesgo de despido</li>
+              <li><strong>La Orden:</strong> $90K de salario + $40K de alivio de deuda = $130K total + empleo protegido + trabajo significativo</li>
+            </ul>
+            <p>Además: cuando su deuda se elimina (3&ndash;5 años), sus ingresos efectivos de por vida son mayores.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>¿Qué pasa si no quiero comprometerme 5 años?</summary>
+          <div>
+            <p>El compromiso inicial es de 2 años. Después de eso, renovaciones anuales hasta un total de 10 años.</p>
+            <p>Puede irse en cualquier momento. El alivio de deuda ya recibido no se recupera, pero los pagos futuros se detienen.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Soy ateo. ¿Es un problema?</summary>
+          <div>
+            <p>No. La Orden opera con patrocinio de instituciones de fe, pero no exige que los miembros tengan creencias religiosas.</p>
+            <p><strong>Requerido:</strong> Respeto por la misión (IA ética alineada con la dignidad humana)</p>
+            <p><strong>No requerido:</strong> Fe religiosa personal</p>
+            <p>Tenemos tecnólogos de todo el espectro de creencias, desde devotos hasta ateos, unidos por valores compartidos sobre el papel de la tecnología en la sociedad.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>¿Y si estoy en una lista negra de empresas tecnológicas? ¿Aun puedo postularme?</summary>
+          <div>
+            <p>Sí. De hecho, eso suele ser evidencia del valor ético que buscamos.</p>
+            <p>"Lista negra" suele significar: "Se negó a comprometerse y pagó el precio".</p>
+            <p>A la Orden no le importa su situación con las corporaciones. Nos importa su competencia técnica y su historial ético.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>¿Puedo publicar investigación y presentar en conferencias?</summary>
+          <div>
+            <p>Sí. Se fomenta y se apoya.</p>
+            <p>La Orden valora:</p>
+            <ul>
+              <li>Contribución de código abierto</li>
+              <li>Publicación académica</li>
+              <li>Presentaciones en conferencias</li>
+              <li>Definición de estándares de la industria</li>
+            </ul>
+            <p>Su trabajo debe influir en el campo, no quedar oculto.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>¿Y si más adelante un trabajo corporativo me ofrece más dinero?</summary>
+          <div>
+            <p>Esperamos que se quede por la misión. Pero somos realistas.</p>
+            <p>Si recibe una oferta convincente:</p>
+            <ul>
+              <li>No hay penalización por irse (más allá de perder el alivio de deuda futuro)</li>
+              <li>Proporcionaremos referencias</li>
+              <li>La puerta permanece abierta para un posible regreso</li>
+            </ul>
+            <p>Queremos personas que quieran estar aquí.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>¿Cómo sé que esto no es una estafa o que no colapsará en un año?</summary>
+          <div>
+            <p>Preocupación legítima. Ofrecemos:</p>
+            <h4>Verificación:</h4>
+            <ul>
+              <li>Documentos de entidad legal (501c3 o equivalente)</li>
+              <li>Cartas de compromiso de instituciones patrocinadoras</li>
+              <li>Informes de transparencia financiera</li>
+              <li>Contactos de miembros del consejo de gobernanza</li>
+            </ul>
+            <h4>Protecciones:</h4>
+            <ul>
+              <li>Los contratos de empleo incluyen indemnización</li>
+              <li>El alivio de deuda ya otorgado nunca se recupera</li>
+              <li>Cobertura de seguros para continuidad operativa</li>
+            </ul>
+            <h4>Transparencia:</h4>
+            <ul>
+              <li>Informes trimestrales públicos</li>
+              <li>Reuniones abiertas del consejo (acceso de observador)</li>
+              <li>Estados financieros disponibles para solicitantes</li>
+            </ul>
+            <p>Estamos construyendo para décadas, no para meses.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>¿Cuál es la trampa?</summary>
+          <div>
+            <p>La "trampa": Debe construir sistemas excelentes. Los estándares de rendimiento son altos.</p>
+            <p>Esto es santuario para la competencia con principios, no para la incompetencia.</p>
+            <p>Si no puede cumplir los estándares técnicos, no prioriza realmente la ética en la práctica, crea conflicto sin causa, o rinde sistemáticamente por debajo&mdash;no durará.</p>
+            <p>Le protegemos para que pueda hacer un trabajo excelente, no un trabajo mediocre.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>¿Puedo trabajar de forma remota?</summary>
+          <div>
+            <p>Depende del proyecto y de los requisitos del patrocinador.</p>
+            <ul>
+              <li><strong>Ciberseguridad para una institución específica:</strong> Puede requerir presencia in situ</li>
+              <li><strong>I+D y desarrollo de herramientas:</strong> A menudo compatible con trabajo remoto</li>
+              <li><strong>Implementación de IA sanitaria:</strong> Probablemente híbrido</li>
+            </ul>
+            <p>Se discute durante el proceso de solicitud según su rol y necesidades.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>¿Qué pasa si la Orden pierde financiación o fracasa?</summary>
+          <div>
+            <p>Mitigación de riesgos:</p>
+            <ol>
+              <li><strong>Patrocinio diversificado:</strong> Múltiples instituciones, no un único punto de falla</li>
+              <li><strong>Creación de un fondo patrimonial:</strong> Años 1&ndash;3 enfocados en sostenibilidad</li>
+              <li><strong>Protecciones contractuales:</strong> Indemnización incluida en los acuerdos de empleo</li>
+              <li><strong>Garantía de alivio de deuda:</strong> Los pagos realizados nunca se recuperan</li>
+            </ol>
+            <p>Peor caso: recibió alivio de deuda + salario + trabajo significativo durante el tiempo que duró la Orden. Aun así está mejor que permanecer en un entorno corporativo que lo despidió por ética.</p>
+          </div>
+        </details>
+      </section>
+
+      <section aria-labelledby="general-faq" class="section">
+        <h2 id="general-faq">Preguntas generales</h2>
+
+        <details>
+          <summary>¿En qué se diferencia la Orden de las iniciativas existentes de ética de la IA?</summary>
+          <div>
+            <p>La mayoría de las iniciativas son:</p>
+            <ul>
+              <li><strong>Académicas:</strong> Investigación sin implementación</li>
+              <li><strong>Corporativas:</strong> Equipos de ética sin autoridad</li>
+              <li><strong>Gubernamentales:</strong> Políticas sin capacidad técnica</li>
+            </ul>
+            <p>La Orden es:</p>
+            <ul>
+              <li><strong>Operativa:</strong> Realmente construye sistemas</li>
+              <li><strong>Protegida:</strong> El respaldo institucional evita la presión corporativa</li>
+              <li><strong>Técnica:</strong> Atendida por constructores experimentados</li>
+            </ul>
+            <p>No solo estudiamos la IA ética. La construimos.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>¿Cuál es la visión a largo plazo?</summary>
+          <div>
+            <h4>Años 1&ndash;5: Prueba de concepto</h4>
+            <ul>
+              <li>Construir sistemas centrales para instituciones patrocinadoras</li>
+              <li>Demostrar que el modelo funciona</li>
+              <li>Refinar gobernanza y operaciones</li>
+            </ul>
+            <h4>Años 6&ndash;10: Expansión y replicación</h4>
+            <ul>
+              <li>Licenciar sistemas a organizaciones externas</li>
+              <li>Generación de ingresos hacia la sostenibilidad</li>
+              <li>Cohortes adicionales y especializaciones</li>
+              <li>Replicación del modelo en otras regiones</li>
+            </ul>
+            <h4>Años 11+: Permanencia institucional</h4>
+            <ul>
+              <li>Autosostenibilidad financiera</li>
+              <li>Autoridad en la definición de estándares de la industria</li>
+              <li>Red global de tecnólogos éticos</li>
+              <li>Influencia en el desarrollo de la IA en todo el mundo</li>
+            </ul>
+            <p><strong>Objetivo final:</strong> Hacer que la infraestructura de IA ética sea tan robusta que la Orden se vuelva obsoleta porque los principios se implementen universalmente.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>¿Quién está detrás de esto?</summary>
+          <div>
+            <p>Estado actual: el equipo fundador incluye tecnólogos con historial ético, representantes de instituciones de fe, asesores académicos y expertos legales y de políticas.</p>
+            <p>Se está formando un consejo de gobernanza con representación de instituciones patrocinadoras y asesores técnicos.</p>
+            <p>Todos los antecedentes son verificables y públicos.</p>
+          </div>
+        </details>
+      </section>
+
+      <section class="section">
+        <p>¿Aún tiene preguntas? <a href="{{ '/contact.html' | relative_url }}">Contáctenos</a>.</p>
+      </section>
+
     </div>
   </main>
 
   <footer class="site-footer">
-    <p class="footer-tagline">"Building the Shield, Refusing the Cage"</p>
-    <nav class="footer-nav" aria-label="Footer navigation">
-      <a href="{{ '/' | relative_url }}">Home</a>
-      <a href="{{ '/faith-leaders/problem.html' | relative_url }}">For Faith Leaders</a>
-      <a href="{{ '/technologists/call.html' | relative_url }}">For Technologists</a>
-      <a href="{{ '/case-studies.html' | relative_url }}">Case Studies</a>
-      <a href="{{ '/about/rome-call.html' | relative_url }}">Rome Call</a>
-      <a href="{{ '/about/displacement-pattern.html' | relative_url }}">Field Guide</a>
-      <a href="{{ '/faq.html' | relative_url }}">FAQ</a>
-      <a href="{{ '/sources.html' | relative_url }}">Sources</a>
-      <a href="{{ '/contact.html' | relative_url }}">Contact</a>
+    <p class="footer-tagline">"Construyendo el escudo, rechazando la jaula"</p>
+    <nav class="footer-nav" aria-label="Navegación del pie de página">
+      <a href="{{ '/' | relative_url }}">Inicio</a>
+      <a href="{{ '/faith-leaders/problem.html' | relative_url }}">Para líderes de fe</a>
+      <a href="{{ '/technologists/call.html' | relative_url }}">Para tecnólogos</a>
+      <a href="{{ '/case-studies.html' | relative_url }}">Casos de estudio</a>
+      <a href="{{ '/about/rome-call.html' | relative_url }}">Llamamiento de Roma</a>
+      <a href="{{ '/about/displacement-pattern.html' | relative_url }}">Guía de campo</a>
+      <a href="{{ '/faq.html' | relative_url }}">Preguntas frecuentes</a>
+      <a href="{{ '/sources.html' | relative_url }}">Fuentes</a>
+      <a href="{{ '/contact.html' | relative_url }}">Contacto</a>
     </nav>
-    <nav class="footer-legal" aria-label="Legal links">
-      <a href="{{ '/privacy.html' | relative_url }}">Privacy Policy</a>
-      <a href="{{ '/terms.html' | relative_url }}">Terms of Service</a>
-      <a href="{{ '/accessibility.html' | relative_url }}">Accessibility</a>
-      <a href="{{ '/transparency.html' | relative_url }}">Transparency Report</a>
-      <a href="{{ '/cookie-notice.html' | relative_url }}">Cookie Notice</a>
+    <nav class="footer-legal" aria-label="Enlaces legales">
+      <a href="{{ '/privacy.html' | relative_url }}">Política de privacidad</a>
+      <a href="{{ '/terms.html' | relative_url }}">Términos de servicio</a>
+      <a href="{{ '/accessibility.html' | relative_url }}">Accesibilidad</a>
+      <a href="{{ '/transparency.html' | relative_url }}">Informe de transparencia</a>
+      <a href="{{ '/cookie-notice.html' | relative_url }}">Aviso de cookies</a>
     </nav>
-    <p class="footer-copy">&copy; {{ 'now' | date: '%Y' }} The Order of Ethical Technologists. All rights reserved.</p>
+    <p class="footer-copy">&copy; 2025 The Order of Ethical Technologists. All rights reserved.</p>
   </footer>
 </body>
 </html>
