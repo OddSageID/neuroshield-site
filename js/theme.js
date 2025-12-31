@@ -7,7 +7,7 @@
   'use strict';
 
   const STORAGE_KEY = 'oet-theme-preference';
-  const DARK_CLASS = 'dark-mode';
+  const THEME_ATTR = 'data-theme';
 
   /**
    * Get the user's theme preference
@@ -26,9 +26,9 @@
    */
   function applyTheme(theme) {
     if (theme === 'dark') {
-      document.documentElement.classList.add(DARK_CLASS);
+      document.documentElement.setAttribute(THEME_ATTR, 'dark');
     } else {
-      document.documentElement.classList.remove(DARK_CLASS);
+      document.documentElement.removeAttribute(THEME_ATTR);
     }
 
     // Update toggle button state
@@ -43,7 +43,7 @@
    * Toggle between dark and light themes
    */
   function toggleTheme() {
-    const current = document.documentElement.classList.contains(DARK_CLASS) ? 'dark' : 'light';
+    const current = document.documentElement.getAttribute(THEME_ATTR) === 'dark' ? 'dark' : 'light';
     const next = current === 'dark' ? 'light' : 'dark';
 
     localStorage.setItem(STORAGE_KEY, next);
