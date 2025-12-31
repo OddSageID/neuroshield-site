@@ -97,6 +97,19 @@ jobs:
 
           echo "OK: All standalone HTML files have CSP meta tags"
 
+  ui-audit:
+    name: UI Audit
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run UI audit
+        run: |
+          python3 tools/audit_ui.py
+
+
   dependency-check:
     name: Dependency Security
     runs-on: ubuntu-latest

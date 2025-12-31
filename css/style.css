@@ -19,9 +19,10 @@
    14. Footer
    15. 404 Page
    16. Utility Classes
-   17. Interactions (Functional Only)
-   18. Responsive Design
-   19. Print Styles
+   17. Section System
+   18. Interactions (Functional Only)
+   19. Responsive Design
+   20. Print Styles
    ========================================================================== */
 
 /* ==========================================================================
@@ -127,9 +128,9 @@
   --space-24: 6rem;     /* 96px */
 
   /* ---- Layout ---- */
-  --max-width-prose: 65ch;
-  --max-width-content: 1100px;
-  --max-width-wide: 1400px;
+  --max-width-prose: 78ch;
+  --max-width-content: 1120px;
+  --max-width-wide: 1320px;
   --container-padding: var(--space-6);
   --border-radius: 2px;
   --border-radius-lg: 4px;
@@ -142,6 +143,9 @@
   /* ---- Focus Ring ---- */
   --focus-ring: 0 0 0 3px rgba(201, 162, 39, 0.4);
   --focus-ring-offset: 2px;
+
+  /* ---- Texture ---- */
+  --paper-texture: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
 }
 
 /* ==========================================================================
@@ -179,6 +183,9 @@ body {
   line-height: var(--leading-relaxed);
   color: var(--text-primary);
   background-color: var(--bg-primary);
+  background-image: var(--paper-texture);
+  background-size: 160px 160px;
+  background-repeat: repeat;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
@@ -240,7 +247,7 @@ h5, h6 {
 }
 
 p {
-  margin-bottom: var(--space-5);
+  margin-bottom: var(--space-4);
   max-width: var(--max-width-prose);
 }
 
@@ -289,13 +296,13 @@ code {
 
 .container {
   width: 100%;
-  max-width: var(--max-width-content);
+  max-width: var(--max-width-prose);
   margin: 0 auto;
   padding: 0 var(--container-padding);
 }
 
 .container-wide {
-  max-width: var(--max-width-wide);
+  max-width: var(--max-width-content);
 }
 
 .container-narrow {
@@ -303,10 +310,6 @@ code {
 }
 
 section {
-  margin-bottom: var(--space-12);
-}
-
-section:last-child {
   margin-bottom: 0;
 }
 
@@ -365,7 +368,7 @@ section:last-child {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: var(--space-2) var(--space-6);
+  gap: var(--space-2) var(--space-4);
 }
 
 .site-nav a {
@@ -374,9 +377,12 @@ section:last-child {
   font-size: var(--text-base);
   font-weight: 500;
   letter-spacing: 0.02em;
-  padding: var(--space-2) 0;
+  padding: var(--space-2) var(--space-2);
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
   border-bottom: 2px solid transparent;
-  transition: border-color var(--transition-base);
+  transition: border-color var(--transition-base), color var(--transition-fast);
 }
 
 .site-nav a:hover {
@@ -385,6 +391,7 @@ section:last-child {
 
 .site-nav a[aria-current="page"] {
   border-bottom-color: var(--color-accent);
+  color: var(--color-accent);
 }
 
 .site-nav a:focus-visible {
@@ -393,56 +400,25 @@ section:last-child {
   border-radius: var(--border-radius);
 }
 
-/* Mobile Navigation */
-.nav-toggle {
-  display: none;
-  background: transparent;
-  border: 1px solid var(--text-inverse);
-  color: var(--text-inverse);
-  padding: var(--space-2) var(--space-3);
-  font-size: var(--text-sm);
-  cursor: pointer;
-  border-radius: var(--border-radius);
-}
-
-.nav-toggle:focus-visible {
-  outline: none;
-  box-shadow: var(--focus-ring);
-}
-
 .nav-links {
-  display: contents;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2) var(--space-4);
 }
 
 @media (max-width: 768px) {
   .site-nav .container {
-    flex-wrap: nowrap;
-    justify-content: space-between;
-  }
-
-  .nav-toggle {
-    display: block;
+    justify-content: center;
   }
 
   .nav-links {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background-color: var(--bg-nav);
-    flex-direction: column;
-    padding: var(--space-4);
-    border-bottom: 1px solid var(--color-accent);
-  }
-
-  .nav-links.is-open {
-    display: flex;
+    gap: var(--space-2) var(--space-3);
   }
 
   .nav-links a {
-    padding: var(--space-3) 0;
-    border-bottom: none;
+    padding: var(--space-2) var(--space-2);
   }
 
 }
@@ -525,9 +501,11 @@ section:last-child {
 
 .hero .breadcrumb {
   font-size: var(--text-sm);
-  opacity: 0.7;
+  opacity: 0.8;
   margin-bottom: var(--space-4);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(245, 245, 245, 0.8);
 }
 
 /* ==========================================================================
@@ -656,6 +634,7 @@ section:last-child {
   border-radius: var(--border-radius-lg);
   padding: var(--space-8);
   margin-bottom: var(--space-6);
+  box-shadow: var(--shadow-sm);
 }
 
 .card:hover {
@@ -669,6 +648,16 @@ section:last-child {
   margin: var(--space-8) 0;
 }
 
+.card-note {
+  background-color: var(--color-gray-50);
+  border-color: var(--color-accent);
+}
+
+.card-note h3 {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+}
+
 /* Callout Boxes */
 .callout {
   border-left: 3px solid var(--color-accent);
@@ -676,6 +665,7 @@ section:last-child {
   padding: var(--space-6);
   margin: var(--space-8) 0;
   border-radius: 0;
+  box-shadow: var(--shadow-sm);
 }
 
 .callout p:last-child {
@@ -763,12 +753,12 @@ section:last-child {
    ========================================================================== */
 
 ul, ol {
-  margin: var(--space-4) 0 var(--space-6) var(--space-6);
+  margin: var(--space-4) 0 var(--space-8) var(--space-6);
   max-width: var(--max-width-prose);
 }
 
 li {
-  margin-bottom: var(--space-2);
+  margin-bottom: var(--space-3);
 }
 
 li::marker {
@@ -813,6 +803,26 @@ ul.x-list li::before {
   color: var(--color-error);
   font-weight: bold;
   font-size: var(--text-lg);
+}
+
+/* Footnotes & Citations */
+.footnotes,
+.citation-list {
+  margin: var(--space-8) 0;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border-color);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+}
+
+.citation-list li,
+.footnotes li {
+  margin-bottom: var(--space-2);
+}
+
+.footnote-ref {
+  font-size: var(--text-sm);
+  vertical-align: super;
 }
 
 /* Timeline */
@@ -1239,6 +1249,10 @@ tbody tr:last-child td {
 
 .text-muted { color: var(--text-muted); }
 .text-secondary { color: var(--text-secondary); }
+.small-caps {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+}
 
 .mt-0 { margin-top: 0; }
 .mt-1 { margin-top: var(--space-4); }
@@ -1276,7 +1290,35 @@ tbody tr:last-child td {
 }
 
 /* ==========================================================================
-   17. Interactions (Functional Only)
+   17. Section System
+   ========================================================================== */
+
+.section {
+  margin: 0 auto var(--space-12);
+  max-width: var(--max-width-prose);
+}
+
+.section:last-child {
+  margin-bottom: 0;
+}
+
+.section--tight {
+  margin-bottom: var(--space-8);
+}
+
+.section + .section {
+  border-top: 1px solid var(--color-accent);
+  padding-top: var(--space-10);
+  margin-top: var(--space-10);
+}
+
+.section--rule {
+  border-top: 1px solid var(--color-accent);
+  padding-top: var(--space-10);
+}
+
+/* ==========================================================================
+   18. Interactions (Functional Only)
    ========================================================================== */
 
 /* No decorative animations - institutional restraint */
@@ -1292,7 +1334,7 @@ tbody tr:last-child td {
 }
 
 /* ==========================================================================
-   18. Responsive Design
+   19. Responsive Design
    ========================================================================== */
 
 @media (max-width: 1024px) {
@@ -1411,7 +1453,7 @@ tbody tr:last-child td {
 }
 
 /* ==========================================================================
-   19. Print Styles
+   20. Print Styles
    ========================================================================== */
 
 @media print {
