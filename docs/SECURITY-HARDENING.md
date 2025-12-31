@@ -18,7 +18,7 @@ This document summarizes the security hardening measures applied to the static J
 
 ```
 default-src 'none';
-script-src 'self' 'sha256-WX4a73Q06DtD4MP8BNJwtJf9CJ0IIXsYXadYwOvXEi8=';
+script-src 'self';
 style-src 'self' 'unsafe-inline';
 img-src 'self' data:;
 font-src 'self';
@@ -34,7 +34,7 @@ upgrade-insecure-requests;
 | Directive | Value | Purpose |
 |-----------|-------|---------|
 | `default-src` | `'none'` | Zero-trust baseline - deny all by default |
-| `script-src` | `'self' 'sha256-...'` | Only self-hosted scripts + hashed inline script |
+| `script-src` | `'self'` | Only self-hosted scripts (no inline, no external) |
 | `style-src` | `'self' 'unsafe-inline'` | Self styles + inline (for theme CSS variables) |
 | `img-src` | `'self' data:` | Self images + inline SVG data URIs |
 | `font-src` | `'self'` | Self-hosted fonts only (no Google CDN) |
@@ -44,11 +44,13 @@ upgrade-insecure-requests;
 | `form-action` | `'self'` | Forms submit only to same origin |
 | `upgrade-insecure-requests` | - | Force HTTPS for any HTTP resources |
 
-### Inline Script Hash
+### No Inline Scripts
 
-The theme detection script is allowed via CSP hash:
-- **Hash:** `sha256-WX4a73Q06DtD4MP8BNJwtJf9CJ0IIXsYXadYwOvXEi8=`
-- **Script:** `(function(){var s=localStorage.getItem("oet-theme-preference");var p=window.matchMedia("(prefers-color-scheme: dark)").matches;if(s==="dark"||(!s&&p)){document.documentElement.classList.add("dark-mode");}})()`
+All JavaScript has been moved to external files:
+- **Theme detection:** `js/theme-init.js` - Loaded synchronously in `<head>` to prevent FOUC
+- **Theme toggle:** `js/theme.js` - Loaded at end of `<body>` for interactivity
+
+This eliminates the need for CSP hashes or `unsafe-inline` for scripts
 
 ---
 

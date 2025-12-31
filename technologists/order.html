@@ -6,7 +6,7 @@
   <meta name="description" content="A Sanctuary for Building the Shield - Protected employment, financial liberation, meaningful work, and aligned mission.">
   <title>The Order - For Technologists - The Order of Ethical Technologists</title>
     <!-- Security -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-WX4a73Q06DtD4MP8BNJwtJf9CJ0IIXsYXadYwOvXEi8='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="X-Frame-Options" content="DENY">
   <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -15,7 +15,8 @@
   <link rel="stylesheet" href="../css/fonts.css">
   <link rel="stylesheet" href="../css/style.css">
 
-  <script>(function(){var s=localStorage.getItem("oet-theme-preference");var p=window.matchMedia("(prefers-color-scheme: dark)").matches;if(s==="dark"||(!s&&p)){document.documentElement.classList.add("dark-mode");}})()</script>
+  <!-- Theme Detection Script (loaded synchronously to prevent FOUC) -->
+  <script src="../js/theme-init.js"></script>
 </head>
 <body class="theme-recruit">
 
