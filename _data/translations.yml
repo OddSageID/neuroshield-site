@@ -64,6 +64,7 @@ faith-leaders-solution:
 
 privacy:
   en: /privacy.html
+  es: /es/privacy.html
 
 sources:
   en: /sources.html
@@ -79,6 +80,7 @@ technologists-choice:
 
 technologists-join:
   en: /technologists/join.html
+  es: /es/technologists/join.html
 
 technologists-order:
   en: /technologists/order.html
@@ -86,6 +88,8 @@ technologists-order:
 
 terms:
   en: /terms.html
+  es: /es/terms.html
 
 transparency:
   en: /transparency.html
+  es: /es/transparency.html
