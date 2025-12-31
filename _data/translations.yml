@@ -20,54 +20,69 @@ faq:
 
 404:
   en: /404.html
+  es: /es/404.html
 
 about-displacement-pattern:
   en: /about/displacement-pattern.html
+  es: /es/about/displacement-pattern.html
 
 about-rome-call:
   en: /about/rome-call.html
+  es: /es/about/rome-call.html
 
 accessibility:
   en: /accessibility.html
+  es: /es/accessibility.html
 
 case-studies:
   en: /case-studies.html
+  es: /es/case-studies.html
 
 contact:
   en: /contact.html
+  es: /es/contact.html
 
 cookie-notice:
   en: /cookie-notice.html
+  es: /es/cookie-notice.html
 
 faith-leaders-ask:
   en: /faith-leaders/ask.html
+  es: /es/faith-leaders/ask.html
 
 faith-leaders-gap:
   en: /faith-leaders/gap.html
+  es: /es/faith-leaders/gap.html
 
 faith-leaders-problem:
   en: /faith-leaders/problem.html
+  es: /es/faith-leaders/problem.html
 
 faith-leaders-solution:
   en: /faith-leaders/solution.html
+  es: /es/faith-leaders/solution.html
 
 privacy:
   en: /privacy.html
 
 sources:
   en: /sources.html
+  es: /es/sources.html
 
 technologists-call:
   en: /technologists/call.html
+  es: /es/technologists/call.html
 
 technologists-choice:
   en: /technologists/choice.html
+  es: /es/technologists/choice.html
 
 technologists-join:
   en: /technologists/join.html
 
 technologists-order:
   en: /technologists/order.html
+  es: /es/technologists/order.html
 
 terms:
   en: /terms.html
