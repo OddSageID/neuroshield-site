@@ -22,13 +22,13 @@
       {% assign nav_contact = nav_map['contact'][nav_lang] | default: nav_map['contact']['en'] %}
       <a href="{{ nav_contact | relative_url }}"{% if page.url == nav_contact %} aria-current="page"{% endif %}>Contact</a>
     </div>
-    <div class="lang-switcher" role="navigation" aria-label="Language selection">
+    <div class="language-switcher" role="navigation" aria-label="Language selection">
       {% assign current_ref = page.ref | default: 'index' %}
       {% assign translations = site.data.translations[current_ref] %}
       {% assign index_map = site.data.translations['index'] %}
       {% for lang in site.data.languages %}
         {% assign href = translations[lang.code] | default: index_map[lang.code] %}
-        <a href="{{ href | relative_url }}"{% if page.lang == lang.code %} aria-current="true"{% endif %}>{{ lang.label }}</a>
+        <a href="{{ href | relative_url }}"{% if page.lang == lang.code %} aria-current="true"{% endif %}>{{ lang.native_name }}</a>
       {% endfor %}
     </div>
   </div>

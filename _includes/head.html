@@ -7,7 +7,7 @@
 <meta name="robots" content="{{ page.robots | default: 'index, follow' }}">
 
 <!-- Canonical URL -->
-<link rel="canonical" href="{{ page.url | absolute_url }}">
+{% include canonical.html %}
 {% include hreflang.html %}
 
 <!-- Open Graph / Social -->
