@@ -1,5 +1,9 @@
+---
+lang: en
+ref: faith-leaders-ask
+---
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ page.lang | default: 'en' }}" dir="{% if page.lang == 'ar' %}rtl{% else %}ltr{% endif %}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,23 +17,14 @@
   <meta http-equiv="Permissions-Policy" content="accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=(), interest-cohort=()">
 
   <link rel="stylesheet" href="../css/fonts.css">
-  <link rel="stylesheet" href="../css/style.css"></head>
+  <link rel="stylesheet" href="../css/style.css">
+  {% include hreflang.html %}
+</head>
 <body class="theme-sponsor">
 
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <nav class="site-nav" aria-label="Main navigation">
-    <div class="container container-wide">
-      <a href="../index.html">Home</a>
-      <a href="problem.html" aria-current="page">For Faith Leaders</a>
-      <a href="../technologists/call.html">For Technologists</a>
-      <a href="../case-studies.html">Case Studies</a>
-      <a href="../about/rome-call.html">Rome Call</a>
-      <a href="../about/displacement-pattern.html">Field Guide</a>
-      <a href="../faq.html">FAQ</a>
-      <a href="../sources.html">Sources</a>
-      <a href="../contact.html">Contact</a></div>
-  </nav>
+  {% include nav.html %}
 
   <header class="hero hero-sponsor">
     <div class="container container-wide">

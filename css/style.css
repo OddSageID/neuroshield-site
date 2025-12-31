@@ -408,6 +408,36 @@ section {
   gap: var(--space-2) var(--space-4);
 }
 
+.lang-switcher {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-3);
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  padding-left: var(--space-3);
+  margin-left: var(--space-2);
+  font-size: var(--text-sm);
+  letter-spacing: 0.02em;
+}
+
+.lang-switcher a {
+  color: var(--text-inverse);
+  text-decoration: none;
+  padding: var(--space-1) var(--space-2);
+  border-bottom: 1px solid transparent;
+  border-radius: var(--border-radius);
+}
+
+.lang-switcher a:hover,
+.lang-switcher a:focus-visible {
+  border-bottom-color: var(--color-accent);
+}
+
+.lang-switcher a[aria-current="true"] {
+  border-bottom-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
 @media (max-width: 768px) {
   .site-nav .container {
     justify-content: center;
@@ -421,6 +451,12 @@ section {
     padding: var(--space-2) var(--space-2);
   }
 
+  .lang-switcher {
+    border-left: none;
+    padding-left: 0;
+    margin-left: 0;
+    justify-content: center;
+  }
 }
 
 /* ==========================================================================
@@ -746,6 +782,64 @@ section {
 
 .theme-recruit .pull-quote {
   border-left-color: var(--recruit-accent);
+}
+
+/* RTL Support (Arabic) */
+html[dir="rtl"] {
+  direction: rtl;
+}
+
+html[dir="rtl"] body {
+  text-align: right;
+}
+
+html[dir="rtl"] .site-nav .container {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .hero {
+  text-align: right;
+}
+
+html[dir="rtl"] .lang-switcher {
+  border-left: none;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  padding-left: 0;
+  padding-right: var(--space-3);
+  margin-left: 0;
+  margin-right: var(--space-2);
+}
+
+html[dir="rtl"] .callout {
+  border-left: none;
+  border-right: 3px solid var(--color-accent);
+}
+
+html[dir="rtl"] .theme-sponsor .callout {
+  border-right-color: var(--sponsor-primary);
+}
+
+html[dir="rtl"] .theme-recruit .callout {
+  border-right-color: var(--recruit-primary);
+}
+
+html[dir="rtl"] .pull-quote {
+  border-left: none;
+  border-right: 3px solid var(--color-accent);
+}
+
+html[dir="rtl"] .theme-sponsor .pull-quote {
+  border-right-color: var(--sponsor-primary);
+}
+
+html[dir="rtl"] .theme-recruit .pull-quote {
+  border-right-color: var(--recruit-accent);
+}
+
+html[dir="rtl"] ul,
+html[dir="rtl"] ol {
+  margin-left: 0;
+  margin-right: var(--space-6);
 }
 
 /* ==========================================================================

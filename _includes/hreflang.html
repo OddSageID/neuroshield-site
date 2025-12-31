@@ -1,0 +1,8 @@
+{% assign current_ref = page.ref | default: 'index' %}
+{% assign translations = site.data.translations[current_ref] %}
+{% assign index_map = site.data.translations['index'] %}
+{% for lang in site.data.languages %}
+  {% assign href = translations[lang.code] | default: index_map[lang.code] %}
+  <link rel="alternate" hreflang="{{ lang.code }}" href="{{ href | relative_url }}">
+{% endfor %}
+<link rel="alternate" hreflang="x-default" href="{{ index_map['en'] | relative_url }}">

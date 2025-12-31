@@ -1,0 +1,35 @@
+<nav class="site-nav" aria-label="Main navigation">
+  {% assign nav_lang = page.lang | default: 'en' %}
+  {% assign nav_map = site.data.translations %}
+  <div class="container container-wide">
+    <div class="nav-links">
+      {% assign nav_home = nav_map['index'][nav_lang] | default: nav_map['index']['en'] %}
+      <a href="{{ nav_home | relative_url }}"{% if page.url == nav_home %} aria-current="page"{% endif %}>Home</a>
+      {% assign nav_faith = nav_map['faith-leaders-problem'][nav_lang] | default: nav_map['faith-leaders-problem']['en'] %}
+      <a href="{{ nav_faith | relative_url }}"{% if page.url contains '/faith-leaders/' %} aria-current="page"{% endif %}>For Faith Leaders</a>
+      {% assign nav_tech = nav_map['technologists-call'][nav_lang] | default: nav_map['technologists-call']['en'] %}
+      <a href="{{ nav_tech | relative_url }}"{% if page.url contains '/technologists/' %} aria-current="page"{% endif %}>For Technologists</a>
+      {% assign nav_cases = nav_map['case-studies'][nav_lang] | default: nav_map['case-studies']['en'] %}
+      <a href="{{ nav_cases | relative_url }}"{% if page.url == nav_cases %} aria-current="page"{% endif %}>Case Studies</a>
+      {% assign nav_rome = nav_map['about-rome-call'][nav_lang] | default: nav_map['about-rome-call']['en'] %}
+      <a href="{{ nav_rome | relative_url }}"{% if page.url contains '/about/' %} aria-current="page"{% endif %}>Rome Call</a>
+      {% assign nav_field = nav_map['about-displacement-pattern'][nav_lang] | default: nav_map['about-displacement-pattern']['en'] %}
+      <a href="{{ nav_field | relative_url }}">Field Guide</a>
+      {% assign nav_faq = nav_map['faq'][nav_lang] | default: nav_map['faq']['en'] %}
+      <a href="{{ nav_faq | relative_url }}"{% if page.url == nav_faq %} aria-current="page"{% endif %}>FAQ</a>
+      {% assign nav_sources = nav_map['sources'][nav_lang] | default: nav_map['sources']['en'] %}
+      <a href="{{ nav_sources | relative_url }}"{% if page.url == nav_sources %} aria-current="page"{% endif %}>Sources</a>
+      {% assign nav_contact = nav_map['contact'][nav_lang] | default: nav_map['contact']['en'] %}
+      <a href="{{ nav_contact | relative_url }}"{% if page.url == nav_contact %} aria-current="page"{% endif %}>Contact</a>
+    </div>
+    <div class="lang-switcher" role="navigation" aria-label="Language selection">
+      {% assign current_ref = page.ref | default: 'index' %}
+      {% assign translations = site.data.translations[current_ref] %}
+      {% assign index_map = site.data.translations['index'] %}
+      {% for lang in site.data.languages %}
+        {% assign href = translations[lang.code] | default: index_map[lang.code] %}
+        <a href="{{ href | relative_url }}"{% if page.lang == lang.code %} aria-current="true"{% endif %}>{{ lang.label }}</a>
+      {% endfor %}
+    </div>
+  </div>
+</nav>
