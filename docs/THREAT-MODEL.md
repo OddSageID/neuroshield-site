@@ -19,8 +19,8 @@
 |-------|------|----------|----------------------|
 | 21 HTML pages | Static content | Root and subdirectories | None |
 | style.css | Stylesheet | /css/ | None |
-| theme.js | JavaScript | /js/ | None |
-| Fonts | Typography | Google Fonts CDN | fonts.googleapis.com, fonts.gstatic.com |
+| fonts.css | Font styles | /css/ | None |
+| Fonts | Typography | /fonts/ (self-hosted) | None |
 
 ---
 
@@ -32,18 +32,17 @@
 - **Vectors:** GitHub account compromise, DNS hijacking, CDN cache poisoning
 
 ### 2.2 JavaScript
-- **Surface:** Single theme.js file (~113 lines)
-- **Risk Level:** Low
-- **Vectors:** Supply chain injection (if modified), DOM XSS via dynamic content
-- **Current Status:** ✓ No eval, innerHTML, or dangerous patterns detected
+- **Surface:** None - pure static HTML/CSS site
+- **Risk Level:** None
+- **Current Status:** ✓ No JavaScript loaded
 
 ### 2.3 External Resources
-- **Surface:** Google Fonts (fonts.googleapis.com, fonts.gstatic.com)
-- **Risk Level:** Medium
-- **Vectors:** CDN compromise, man-in-middle, malicious CSS injection
+- **Surface:** None - all fonts self-hosted
+- **Risk Level:** None
+- **Current Status:** ✓ No external dependencies
 
 ### 2.4 User Interactions
-- **Surface:** Links, theme toggle, mobile navigation
+- **Surface:** Links, mobile navigation
 - **Risk Level:** Very Low
 - **Vectors:** Limited - no forms, no user input processing
 
@@ -65,16 +64,16 @@
 | DOM XSS | Low | Low | High | No innerHTML/eval usage; CSP script-src |
 
 **Mitigations Implemented:**
-- CSP `script-src 'self'` blocks external scripts
-- CSP `script-src` with hash for inline theme script
-- No dynamic HTML injection in JavaScript
+- CSP `script-src 'self'` blocks external and inline scripts
+- No JavaScript loaded - pure static HTML/CSS
+- No dynamic HTML injection
 - No URL parameter processing
 
 ### 3.2 Supply Chain Attacks
 
 | Vector | Risk | Likelihood | Impact | Mitigation |
 |--------|------|------------|--------|------------|
-| Compromised CDN (Google Fonts) | Medium | Low | High | Self-host fonts, SRI hashes |
+| External CDN compromise | N/A | N/A | N/A | All resources self-hosted |
 | GitHub account compromise | Medium | Very Low | Critical | 2FA, branch protection, signed commits |
 | Malicious dependency injection | N/A | N/A | N/A | No npm/package dependencies |
 
@@ -210,11 +209,11 @@ For complete security header enforcement, consider:
 
 | Threat | Severity | Mitigation | Status |
 |--------|----------|------------|--------|
-| XSS via inline script | High | CSP with script hash | ✓ Implemented |
-| DOM XSS | High | No dangerous sinks | ✓ Verified |
+| XSS via inline script | High | CSP script-src 'self' (no inline) | ✓ Implemented |
+| DOM XSS | N/A | No JavaScript loaded | ✓ N/A |
 | Clickjacking | Medium | frame-ancestors 'none' | ✓ Implemented |
 | Supply chain (fonts) | Medium | Self-hosted fonts | ✓ Implemented |
-| Supply chain (JS) | Medium | No external JS + SRI | ✓ Implemented |
+| Supply chain (JS) | N/A | No JavaScript | ✓ N/A |
 | Referrer leakage | Low | Referrer-Policy | ✓ Implemented |
 | Mixed content | Low | HTTPS-only | ✓ GitHub enforces |
 | Cache poisoning | Low | GitHub CDN controls | ✓ GitHub manages |

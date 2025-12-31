@@ -146,11 +146,8 @@ INLINE_SCRIPTS=$(grep -rEn '<script>[^<]+</script>' --include="*.html" . 2>/dev/
     || true)
 
 if [ -n "$INLINE_SCRIPTS" ]; then
-    # Check if they're the approved theme detection script
-    UNAPPROVED=$(echo "$INLINE_SCRIPTS" | grep -v 'oet-theme-preference' || true)
-    if [ -n "$UNAPPROVED" ]; then
-        log_warning "Inline scripts found (ensure CSP hash is configured): $UNAPPROVED"
-    fi
+    # All inline scripts should be flagged - site should use external JS only
+    log_warning "Inline scripts found (should be moved to external files): $INLINE_SCRIPTS"
 fi
 
 echo ""

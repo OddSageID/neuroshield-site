@@ -3,7 +3,7 @@
    Version: 2.0.0
 
    Table of Contents:
-   1. CSS Custom Properties (Light/Dark themes)
+   1. CSS Custom Properties (Light theme)
    2. Reset & Base Styles
    3. Typography System
    4. Layout & Container
@@ -19,10 +19,9 @@
    14. Footer
    15. 404 Page
    16. Utility Classes
-   17. Dark Mode Overrides
-   18. Animations & Micro-interactions
-   19. Responsive Design
-   20. Print Styles
+   17. Interactions (Functional Only)
+   18. Responsive Design
+   19. Print Styles
    ========================================================================== */
 
 /* ==========================================================================
@@ -447,64 +446,6 @@ section:last-child {
     padding: var(--space-3) 0;
     border-bottom: none;
   }
-
-  .site-nav .theme-toggle {
-    margin-left: auto;
-    margin-right: var(--space-3);
-  }
-}
-
-/* Theme Toggle Button */
-.theme-toggle {
-  background: transparent;
-  border: 2px solid var(--color-gray-500);
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: border-color var(--transition-base), transform var(--transition-base);
-  margin-left: var(--space-4);
-}
-
-.theme-toggle:hover {
-  border-color: var(--color-accent);
-  transform: scale(1.05);
-}
-
-.theme-toggle:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.5);
-}
-
-.theme-toggle-icon {
-  width: 20px;
-  height: 20px;
-  background: var(--color-white);
-  border-radius: 50%;
-  position: relative;
-  transition: transform var(--transition-base), background var(--transition-base);
-}
-
-/* Sun rays for light mode indicator */
-.theme-toggle-icon::before {
-  content: "";
-  position: absolute;
-  inset: -4px;
-  border: 2px dashed var(--color-white);
-  border-radius: 50%;
-  opacity: 0.6;
-}
-
-html[data-theme="dark"] .theme-toggle-icon {
-  background: var(--color-accent);
-  transform: scale(0.8);
-}
-
-html[data-theme="dark"] .theme-toggle-icon::before {
-  opacity: 0;
 }
 
 /* ==========================================================================
@@ -1336,123 +1277,7 @@ tbody tr:last-child td {
 }
 
 /* ==========================================================================
-   17. Dark Mode Overrides
-   ========================================================================== */
-
-html[data-theme="dark"] {
-  --bg-primary: #0f1419;
-  --bg-secondary: #1a1f26;
-  --bg-tertiary: #252b33;
-  --bg-nav: #050a10;
-  --bg-footer: #050a10;
-
-  --text-primary: #e7e9ea;
-  --text-secondary: #a3a8ae;
-  --text-muted: #71767b;
-  --text-inverse: #0f1419;
-
-  --border-color: #2f3336;
-  --border-color-strong: #3f4448;
-
-  /* Primary colors for dark mode - prevents dark navy on dark bg */
-  --color-primary: #a3c5e8;
-  --color-primary-light: #c4d9f0;
-  --color-primary-dark: #7aa8d4;
-
-  /* Keep gold accent visible in dark mode */
-  --color-accent: #d4b445;
-  --color-accent-light: #e0c35a;
-
-  --sponsor-primary: #a3c5e8;
-  --sponsor-surface: #1a2332;
-  --recruit-primary: #e8a3a3;
-  --recruit-surface: #2a1a1a;
-
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.5);
-  --shadow-xl: 0 8px 16px rgba(0, 0, 0, 0.6);
-
-  --focus-ring: 0 0 0 3px rgba(212, 180, 69, 0.5);
-}
-
-/* Dark mode heroes - flat colors, no gradients */
-html[data-theme="dark"] .hero-home,
-html[data-theme="dark"] .hero-shared {
-  background-color: var(--bg-nav);
-}
-
-html[data-theme="dark"] .hero-sponsor {
-  background-color: #0a1628;
-}
-
-html[data-theme="dark"] .hero-recruit {
-  background-color: #2a1010;
-}
-
-html[data-theme="dark"] .card {
-  background-color: var(--bg-secondary);
-  border-color: var(--border-color);
-}
-
-html[data-theme="dark"] details {
-  background-color: var(--bg-secondary);
-  border-color: var(--border-color);
-}
-
-html[data-theme="dark"] summary:hover {
-  background-color: var(--bg-tertiary);
-}
-
-html[data-theme="dark"] .diagram {
-  background-color: var(--bg-secondary);
-}
-
-html[data-theme="dark"] .org-chart {
-  background-color: var(--bg-secondary);
-}
-
-html[data-theme="dark"] .path-sponsor {
-  background-color: var(--sponsor-surface);
-  border-color: var(--sponsor-accent);
-}
-
-html[data-theme="dark"] .path-recruit {
-  background-color: var(--recruit-surface);
-  border-color: var(--recruit-accent);
-}
-
-html[data-theme="dark"] .callout {
-  background-color: var(--bg-secondary);
-}
-
-html[data-theme="dark"] .callout-stat {
-  background-color: rgba(212, 175, 55, 0.1);
-}
-
-html[data-theme="dark"] .callout-stat .stat-number {
-  color: var(--color-accent);
-}
-
-html[data-theme="dark"] .pull-quote {
-  background-color: var(--bg-secondary);
-  color: var(--text-secondary);
-}
-
-html[data-theme="dark"] .timeline li::before {
-  border-color: var(--bg-primary);
-}
-
-html[data-theme="dark"] .helpful-links {
-  background-color: var(--bg-secondary);
-}
-
-html[data-theme="dark"] .error-icon {
-  color: var(--color-accent);
-}
-
-/* ==========================================================================
-   18. Interactions (Functional Only)
+   17. Interactions (Functional Only)
    ========================================================================== */
 
 /* No decorative animations - institutional restraint */
@@ -1468,7 +1293,7 @@ html[data-theme="dark"] .error-icon {
 }
 
 /* ==========================================================================
-   19. Responsive Design
+   18. Responsive Design
    ========================================================================== */
 
 @media (max-width: 1024px) {
@@ -1531,17 +1356,6 @@ html[data-theme="dark"] .error-icon {
     font-size: var(--text-sm);
   }
 
-  .theme-toggle {
-    width: 36px;
-    height: 36px;
-    margin-left: var(--space-2);
-  }
-
-  .theme-toggle-icon {
-    width: 16px;
-    height: 16px;
-  }
-
   .pull-quote {
     font-size: var(--text-lg);
     padding: var(--space-4) var(--space-5);
@@ -1598,7 +1412,7 @@ html[data-theme="dark"] .error-icon {
 }
 
 /* ==========================================================================
-   20. Print Styles
+   19. Print Styles
    ========================================================================== */
 
 @media print {
@@ -1618,7 +1432,6 @@ html[data-theme="dark"] .error-icon {
 
   .site-nav,
   .site-footer,
-  .theme-toggle,
   .skip-link,
   .btn-group {
     display: none !important;
@@ -1678,13 +1491,4 @@ body.theme-recruit {
 
 body.theme-recruit .hero {
   background: linear-gradient(135deg, #7f1111 0%, var(--recruit-primary) 100%);
-}
-
-html[data-theme="dark"].theme-sponsor {
-  --color-primary: var(--sponsor-accent);
-}
-
-html[data-theme="dark"].theme-recruit {
-  --color-primary: var(--recruit-accent);
-  background-color: var(--recruit-surface);
 }

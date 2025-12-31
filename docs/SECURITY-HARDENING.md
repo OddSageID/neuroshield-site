@@ -46,9 +46,7 @@ upgrade-insecure-requests;
 
 ### No Inline Scripts
 
-All JavaScript has been moved to external files:
-- **Theme detection:** `js/theme-init.js` - Loaded synchronously in `<head>` to prevent FOUC
-- **Theme toggle:** `js/theme.js` - Loaded at end of `<body>` for interactivity
+All JavaScript is loaded from external files only. No inline scripts are used.
 
 This eliminates the need for CSP hashes or `unsafe-inline` for scripts
 
@@ -131,7 +129,6 @@ To get complete security header enforcement, consider:
 
 All 21 HTML pages updated with:
 - Hardened CSP (`default-src 'none'`)
-- Script hash for inline theme script
 - Permissions-Policy header
 - Removed Google Fonts CDN references
 - Added fonts.css reference
@@ -139,7 +136,8 @@ All 21 HTML pages updated with:
 ### Files Removed/Changed
 
 - Removed Google Fonts CDN dependencies (preconnect + stylesheet links)
-- Inline scripts standardized and hashed
+- Removed dark mode functionality (theme detection scripts, toggle buttons)
+- Site now renders light theme only for reduced complexity and attack surface
 
 ---
 
@@ -147,21 +145,11 @@ All 21 HTML pages updated with:
 
 ### JavaScript Analysis
 
-| File | Status | Dangerous Patterns |
-|------|--------|--------------------|
-| `js/theme.js` | ✅ Safe | None found |
-
-**Verified Safe:**
-- No `innerHTML`, `outerHTML`, `insertAdjacentHTML`
-- No `document.write`, `eval`, `new Function`
-- No `setTimeout/setInterval` with string arguments
-- Uses only safe methods: `classList`, `localStorage`, `addEventListener`
+No JavaScript files are currently loaded. The site is pure static HTML/CSS.
 
 ### Inline Scripts
 
-| Location | Status | Hash |
-|----------|--------|------|
-| Theme detection (all pages) | ✅ Hashed | `sha256-WX4a73Q06DtD4MP8BNJwtJf9CJ0IIXsYXadYwOvXEi8=` |
+None. The site contains no inline scripts, eliminating script injection risks.
 
 ---
 
@@ -207,7 +195,7 @@ Runs on every push and PR with the following checks:
 | CSP Validation | Verify all pages have CSP | Missing CSP meta tag |
 | JS Security Audit | Scan for dangerous patterns | `innerHTML`, `eval`, etc. |
 | External Script Check | Verify SRI on external scripts | External scripts without SRI |
-| Inline Script Audit | Flag unapproved inline scripts | Non-theme inline scripts |
+| Inline Script Audit | Flag unapproved inline scripts | Any inline scripts found |
 | Link Security | Verify `rel="noopener"` | Missing on `target="_blank"` |
 | Dependency Check | External resource audit | Non-font external resources |
 
@@ -219,7 +207,7 @@ Runs on every push and PR with the following checks:
 
 - [ ] Use the Jekyll layout (`_layouts/default.html`) or copy security headers
 - [ ] Ensure CSP meta tag is present
-- [ ] Verify inline script hash matches if modified
+- [ ] Do not add inline scripts (use external files only)
 
 ### When Adding JavaScript
 
