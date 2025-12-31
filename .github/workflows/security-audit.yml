@@ -45,9 +45,38 @@ jobs:
         run: |
           echo "Checking for CSP meta tags in HTML files..."
 
+          # First, verify CSP is defined centrally in Jekyll includes
+          echo "=== Checking Jekyll CSP Include Chain ==="
+
+          # Check that CSP exists in the central security-headers include
+          if [ -f "./_includes/security-headers.html" ]; then
+            if grep -q 'Content-Security-Policy' "./_includes/security-headers.html"; then
+              echo "✓ CSP defined in _includes/security-headers.html"
+            else
+              echo "::error::_includes/security-headers.html exists but missing CSP meta tag"
+              exit 1
+            fi
+          else
+            echo "::warning::_includes/security-headers.html not found (Jekyll include)"
+          fi
+
+          # Check that head.html includes security-headers.html
+          if [ -f "./_includes/head.html" ]; then
+            if grep -q 'security-headers' "./_includes/head.html"; then
+              echo "✓ _includes/head.html includes security-headers.html"
+            else
+              echo "::error::_includes/head.html does not include security-headers.html"
+              exit 1
+            fi
+          fi
+
+          echo ""
+          echo "=== Checking Standalone HTML Pages ==="
+
           MISSING_CSP=()
 
-          for file in $(find . -name "*.html" -not -path "./_site/*" -not -path "./node_modules/*"); do
+          # Check all HTML files EXCEPT Jekyll includes/layouts (they're partials, not full pages)
+          for file in $(find . -name "*.html" -not -path "./_site/*" -not -path "./node_modules/*" -not -path "./_includes/*" -not -path "./_layouts/*"); do
             if ! grep -q 'Content-Security-Policy' "$file"; then
               MISSING_CSP+=("$file")
             fi
@@ -59,7 +88,7 @@ jobs:
             exit 1
           fi
 
-          echo "✓ All HTML files have CSP meta tags"
+          echo "✓ All standalone HTML files have CSP meta tags"
 
   dependency-check:
     name: Dependency Security
