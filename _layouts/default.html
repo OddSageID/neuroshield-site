@@ -23,9 +23,6 @@
         <a href="{{ '/sources.html' | relative_url }}"{% if page.url == '/sources.html' %} aria-current="page"{% endif %}>Sources</a>
         <a href="{{ '/contact.html' | relative_url }}"{% if page.url == '/contact.html' %} aria-current="page"{% endif %}>Contact</a>
       </div>
-      <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">
-        <span class="theme-toggle-icon" aria-hidden="true"></span>
-      </button>
     </div>
   </nav>
 
@@ -54,7 +51,5 @@
     <p class="footer-copy">&copy; {{ 'now' | date: '%Y' }} The Order of Ethical Technologists. All rights reserved.</p>
   </footer>
 
-  <!-- Main Theme Script - SRI hash for integrity verification -->
-  <script src="{{ '/js/theme.js' | relative_url }}"></script>
 </body>
 </html>

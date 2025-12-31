@@ -13,8 +13,6 @@ security:
   csp:
     # Self-hosted fonts mode eliminates Google CDN dependency
     self_hosted_fonts: true
-    # Script hash for inline theme detection (prevents FOUC)
-    inline_script_hash: "sha256-rCIVVGjACCf0oGWsJi531YsuqjBAOL9qK4aWIxFrZWk="
 
 # Build Settings
 markdown: kramdown

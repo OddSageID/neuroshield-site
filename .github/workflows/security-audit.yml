@@ -58,7 +58,7 @@ jobs:
           # Check that CSP exists in the central security-headers include
           if [ -f "./_includes/security-headers.html" ]; then
             if grep -q 'Content-Security-Policy' "./_includes/security-headers.html"; then
-              echo "✓ CSP defined in _includes/security-headers.html"
+              echo "OK: CSP defined in _includes/security-headers.html"
             else
               echo "::error::_includes/security-headers.html exists but missing CSP meta tag"
               exit 1
@@ -70,7 +70,7 @@ jobs:
           # Check that head.html includes security-headers.html
           if [ -f "./_includes/head.html" ]; then
             if grep -q 'security-headers' "./_includes/head.html"; then
-              echo "✓ _includes/head.html includes security-headers.html"
+              echo "OK: _includes/head.html includes security-headers.html"
             else
               echo "::error::_includes/head.html does not include security-headers.html"
               exit 1
@@ -95,7 +95,7 @@ jobs:
             exit 1
           fi
 
-          echo "✓ All standalone HTML files have CSP meta tags"
+          echo "OK: All standalone HTML files have CSP meta tags"
 
   dependency-check:
     name: Dependency Security

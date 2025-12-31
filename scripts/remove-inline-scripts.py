@@ -1,10 +1,8 @@
 #!/usr/bin/env python3
 """
 Remove inline scripts and update CSP to use only 'self' for scripts.
-Adds external theme-init.js reference instead.
 """
 
-import os
 import re
 from pathlib import Path
 
@@ -30,40 +28,11 @@ def update_html_file(filepath):
         )
         changes.append("Updated CSP to script-src 'self'")
 
-    # 2. Remove inline theme detection script
-    inline_script_patterns = [
-        r'\s*<script>\s*\(function\(\)\s*\{[^<]*oet-theme-preference[^<]*</script>',
-        r'\s*<!-- Inline critical theme detection[^>]*-->\s*',
-        r'\s*<!-- Critical: Inline Theme Detection[^>]*-->\s*',
-    ]
-
-    for pattern in inline_script_patterns:
-        if re.search(pattern, content, re.IGNORECASE | re.DOTALL):
-            content = re.sub(pattern, '', content, flags=re.IGNORECASE | re.DOTALL)
-            changes.append("Removed inline script")
-
-    # 3. Add external theme-init.js if not present
-    # Determine the correct path based on file location
-    rel_path = filepath.relative_to(Path(__file__).parent.parent)
-    depth = len(rel_path.parts) - 1  # Subtract 1 for the filename itself
-
-    if depth == 0:
-        prefix = ""
-    else:
-        prefix = "../" * depth
-
-    theme_init_script = f'<script src="{prefix}js/theme-init.js"></script>'
-
-    # Check if theme-init.js is already referenced
-    if 'theme-init.js' not in content:
-        # Add before </head> or after stylesheet
-        if '</head>' in content:
-            # Add before </head>
-            content = content.replace(
-                '</head>',
-                f'\n  <!-- Theme Detection Script (loaded synchronously to prevent FOUC) -->\n  {theme_init_script}\n</head>'
-            )
-            changes.append(f"Added external theme-init.js ({prefix}js/theme-init.js)")
+    # 2. Remove inline scripts (no src attribute)
+    inline_script_pattern = r'\s*<script(?![^>]*\ssrc=)[^>]*>[\s\S]*?</script>'
+    if re.search(inline_script_pattern, content, re.IGNORECASE):
+        content = re.sub(inline_script_pattern, '', content, flags=re.IGNORECASE)
+        changes.append("Removed inline scripts")
 
     if content != original:
         with open(filepath, 'w', encoding='utf-8') as f:

@@ -27,7 +27,7 @@
   CSP Directive Breakdown:
   - default-src 'none': Deny all by default (zero-trust)
   - script-src 'self': Only self-hosted scripts (no inline, no external)
-  - style-src 'self' 'unsafe-inline': Self styles + inline (needed for theme CSS vars)
+  - style-src 'self' 'unsafe-inline': Self styles + inline styles when required
   - img-src 'self' data:: Self images + inline SVG data URIs
   - font-src 'self': Self-hosted fonts only (no Google CDN)
   - connect-src 'self': Only same-origin fetch/XHR
