@@ -1,0 +1,40 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="{{ page.description | default: site.description }}">
+<meta name="author" content="The Order of Ethical Technologists">
+<meta name="robots" content="{{ page.robots | default: 'index, follow' }}">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+
+<!-- Open Graph / Social -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:title" content="{{ page.title | default: site.title }}">
+<meta property="og:description" content="{{ page.description | default: site.description }}">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{ page.title | default: site.title }}">
+<meta name="twitter:description" content="{{ page.description | default: site.description }}">
+
+<!-- Security Headers -->
+{% include security-headers.html %}
+
+<title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+
+<!-- Self-Hosted Fonts -->
+<!-- Fonts are loaded from /fonts/ directory - no external CDN dependency -->
+<link rel="stylesheet" href="{{ '/css/fonts.css' | relative_url }}">
+
+<!-- Main Stylesheet -->
+<link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}">
+
+<!-- Critical: Inline Theme Detection Script -->
+<!-- This script MUST run before body renders to prevent flash of wrong theme -->
+<!-- Hash: sha256-WX4a73Q06DtD4MP8BNJwtJf9CJ0IIXsYXadYwOvXEi8= (included in CSP) -->
+<script>(function(){var s=localStorage.getItem("oet-theme-preference");var p=window.matchMedia("(prefers-color-scheme: dark)").matches;if(s==="dark"||(!s&&p)){document.documentElement.classList.add("dark-mode");}})()</script>

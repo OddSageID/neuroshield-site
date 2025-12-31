@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+<head>
+  {% include head.html %}
+</head>
+<body class="{{ page.body_class | default: 'theme-default' }}">
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="container">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">
+        Menu
+      </button>
+      <div id="nav-links" class="nav-links">
+        <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>Home</a>
+        <a href="{{ '/faith-leaders/problem.html' | relative_url }}"{% if page.url contains '/faith-leaders/' %} aria-current="page"{% endif %}>For Faith Leaders</a>
+        <a href="{{ '/technologists/call.html' | relative_url }}"{% if page.url contains '/technologists/' %} aria-current="page"{% endif %}>For Technologists</a>
+        <a href="{{ '/case-studies.html' | relative_url }}"{% if page.url == '/case-studies.html' %} aria-current="page"{% endif %}>Case Studies</a>
+        <a href="{{ '/about/rome-call.html' | relative_url }}"{% if page.url contains '/about/' %} aria-current="page"{% endif %}>Rome Call</a>
+        <a href="{{ '/about/displacement-pattern.html' | relative_url }}">Field Guide</a>
+        <a href="{{ '/faq.html' | relative_url }}"{% if page.url == '/faq.html' %} aria-current="page"{% endif %}>FAQ</a>
+        <a href="{{ '/sources.html' | relative_url }}"{% if page.url == '/sources.html' %} aria-current="page"{% endif %}>Sources</a>
+        <a href="{{ '/contact.html' | relative_url }}"{% if page.url == '/contact.html' %} aria-current="page"{% endif %}>Contact</a>
+      </div>
+      <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">
+        <span class="theme-toggle-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+  </nav>
+
+  {{ content }}
+
+  <footer class="site-footer">
+    <p class="footer-tagline">"Building the Shield, Refusing the Cage"</p>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="{{ '/' | relative_url }}">Home</a>
+      <a href="{{ '/faith-leaders/problem.html' | relative_url }}">For Faith Leaders</a>
+      <a href="{{ '/technologists/call.html' | relative_url }}">For Technologists</a>
+      <a href="{{ '/case-studies.html' | relative_url }}">Case Studies</a>
+      <a href="{{ '/about/rome-call.html' | relative_url }}">Rome Call</a>
+      <a href="{{ '/about/displacement-pattern.html' | relative_url }}">Field Guide</a>
+      <a href="{{ '/faq.html' | relative_url }}">FAQ</a>
+      <a href="{{ '/sources.html' | relative_url }}">Sources</a>
+      <a href="{{ '/contact.html' | relative_url }}">Contact</a>
+    </nav>
+    <nav class="footer-legal" aria-label="Legal links">
+      <a href="{{ '/privacy.html' | relative_url }}">Privacy Policy</a>
+      <a href="{{ '/terms.html' | relative_url }}">Terms of Service</a>
+      <a href="{{ '/accessibility.html' | relative_url }}">Accessibility</a>
+      <a href="{{ '/transparency.html' | relative_url }}">Transparency Report</a>
+      <a href="{{ '/cookie-notice.html' | relative_url }}">Cookie Notice</a>
+    </nav>
+    <p class="footer-copy">&copy; {{ 'now' | date: '%Y' }} The Order of Ethical Technologists. All rights reserved.</p>
+  </footer>
+
+  <!-- Main Theme Script - SRI hash for integrity verification -->
+  <script src="{{ '/js/theme.js' | relative_url }}"></script>
+</body>
+</html>
