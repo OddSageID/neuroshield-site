@@ -498,12 +498,12 @@ section:last-child {
   opacity: 0.6;
 }
 
-.dark-mode .theme-toggle-icon {
+html[data-theme="dark"] .theme-toggle-icon {
   background: var(--color-accent);
   transform: scale(0.8);
 }
 
-.dark-mode .theme-toggle-icon::before {
+html[data-theme="dark"] .theme-toggle-icon::before {
   opacity: 0;
 }
 
@@ -1339,7 +1339,7 @@ tbody tr:last-child td {
    17. Dark Mode Overrides
    ========================================================================== */
 
-.dark-mode {
+html[data-theme="dark"] {
   --bg-primary: #0f1419;
   --bg-secondary: #1a1f26;
   --bg-tertiary: #252b33;
@@ -1354,11 +1354,18 @@ tbody tr:last-child td {
   --border-color: #2f3336;
   --border-color-strong: #3f4448;
 
+  /* Primary colors for dark mode - prevents dark navy on dark bg */
+  --color-primary: #a3c5e8;
+  --color-primary-light: #c4d9f0;
+  --color-primary-dark: #7aa8d4;
+
   /* Keep gold accent visible in dark mode */
   --color-accent: #d4b445;
   --color-accent-light: #e0c35a;
 
+  --sponsor-primary: #a3c5e8;
   --sponsor-surface: #1a2332;
+  --recruit-primary: #e8a3a3;
   --recruit-surface: #2a1a1a;
 
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
@@ -1370,77 +1377,77 @@ tbody tr:last-child td {
 }
 
 /* Dark mode heroes - flat colors, no gradients */
-.dark-mode .hero-home,
-.dark-mode .hero-shared {
-  background-color: #050a10;
+html[data-theme="dark"] .hero-home,
+html[data-theme="dark"] .hero-shared {
+  background-color: var(--bg-nav);
 }
 
-.dark-mode .hero-sponsor {
+html[data-theme="dark"] .hero-sponsor {
   background-color: #0a1628;
 }
 
-.dark-mode .hero-recruit {
+html[data-theme="dark"] .hero-recruit {
   background-color: #2a1010;
 }
 
-.dark-mode .card {
+html[data-theme="dark"] .card {
   background-color: var(--bg-secondary);
   border-color: var(--border-color);
 }
 
-.dark-mode details {
+html[data-theme="dark"] details {
   background-color: var(--bg-secondary);
   border-color: var(--border-color);
 }
 
-.dark-mode summary:hover {
+html[data-theme="dark"] summary:hover {
   background-color: var(--bg-tertiary);
 }
 
-.dark-mode .diagram {
+html[data-theme="dark"] .diagram {
   background-color: var(--bg-secondary);
 }
 
-.dark-mode .org-chart {
+html[data-theme="dark"] .org-chart {
   background-color: var(--bg-secondary);
 }
 
-.dark-mode .path-sponsor {
+html[data-theme="dark"] .path-sponsor {
   background-color: var(--sponsor-surface);
   border-color: var(--sponsor-accent);
 }
 
-.dark-mode .path-recruit {
+html[data-theme="dark"] .path-recruit {
   background-color: var(--recruit-surface);
   border-color: var(--recruit-accent);
 }
 
-.dark-mode .callout {
+html[data-theme="dark"] .callout {
   background-color: var(--bg-secondary);
 }
 
-.dark-mode .callout-stat {
+html[data-theme="dark"] .callout-stat {
   background-color: rgba(212, 175, 55, 0.1);
 }
 
-.dark-mode .callout-stat .stat-number {
+html[data-theme="dark"] .callout-stat .stat-number {
   color: var(--color-accent);
 }
 
-.dark-mode .pull-quote {
+html[data-theme="dark"] .pull-quote {
   background-color: var(--bg-secondary);
   color: var(--text-secondary);
 }
 
-.dark-mode .timeline li::before {
+html[data-theme="dark"] .timeline li::before {
   border-color: var(--bg-primary);
 }
 
-.dark-mode .helpful-links {
+html[data-theme="dark"] .helpful-links {
   background-color: var(--bg-secondary);
 }
 
-.dark-mode .error-icon {
+html[data-theme="dark"] .error-icon {
   color: var(--color-accent);
 }
 
@@ -1673,11 +1680,11 @@ body.theme-recruit .hero {
   background: linear-gradient(135deg, #7f1111 0%, var(--recruit-primary) 100%);
 }
 
-.dark-mode.theme-sponsor {
+html[data-theme="dark"].theme-sponsor {
   --color-primary: var(--sponsor-accent);
 }
 
-.dark-mode.theme-recruit {
+html[data-theme="dark"].theme-recruit {
   --color-primary: var(--recruit-accent);
-  background-color: #1a1512;
+  background-color: var(--recruit-surface);
 }

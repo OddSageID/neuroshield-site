@@ -36,5 +36,5 @@
 
 <!-- Critical: Inline Theme Detection Script -->
 <!-- This script MUST run before body renders to prevent flash of wrong theme -->
-<!-- Hash: sha256-WX4a73Q06DtD4MP8BNJwtJf9CJ0IIXsYXadYwOvXEi8= (included in CSP) -->
-<script>(function(){var s=localStorage.getItem("oet-theme-preference");var p=window.matchMedia("(prefers-color-scheme: dark)").matches;if(s==="dark"||(!s&&p)){document.documentElement.classList.add("dark-mode");}})()</script>
+<!-- Hash: sha256-DIACqTmFf77tByRINSgP1ZbACFrR9vjjPMY6e9z4574= (included in CSP) -->
+<script>(function(){var s=localStorage.getItem("oet-theme-preference");var p=window.matchMedia("(prefers-color-scheme: dark)").matches;if(s==="dark"||(!s&&p)){document.documentElement.setAttribute("data-theme","dark");}})()</script>
