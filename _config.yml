@@ -1,0 +1,43 @@
+# Site Settings
+title: The Order of Ethical Technologists
+description: A Faith-Based Sanctuary for Building Ethical AI
+url: "https://oddsageid.github.io"
+baseurl: "/neuroshield-site"
+lang: en
+
+# Security Settings
+# These are used by the security headers include
+security:
+  # CSP nonce is regenerated per build - not truly random but provides defense-in-depth
+  # For true nonces, you need a server-side solution
+  csp:
+    # Self-hosted fonts mode eliminates Google CDN dependency
+    self_hosted_fonts: true
+    # Script hash for inline theme detection (prevents FOUC)
+    inline_script_hash: "sha256-rCIVVGjACCf0oGWsJi531YsuqjBAOL9qK4aWIxFrZWk="
+
+# Build Settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# Exclude from processing
+exclude:
+  - docs/
+  - README.md
+  - LICENSE
+  - CONTRIBUTING.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/
+  - .github/
+
+# Include hidden files
+include:
+  - .well-known
+
+# Plugins (GitHub Pages safe)
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap

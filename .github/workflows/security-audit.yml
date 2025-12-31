@@ -1,0 +1,219 @@
+name: Security Audit
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  security-lint:
+    name: Security Linting
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run security checks
+        id: security
+        run: |
+          chmod +x ./scripts/security-lint.sh
+          ./scripts/security-lint.sh
+
+      - name: Upload security report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: security-report
+          path: security-report.txt
+          retention-days: 30
+
+  csp-validation:
+    name: CSP Validation
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate CSP in HTML files
+        run: |
+          echo "Checking for CSP meta tags in HTML files..."
+
+          MISSING_CSP=()
+
+          for file in $(find . -name "*.html" -not -path "./_site/*" -not -path "./node_modules/*"); do
+            if ! grep -q 'Content-Security-Policy' "$file"; then
+              MISSING_CSP+=("$file")
+            fi
+          done
+
+          if [ ${#MISSING_CSP[@]} -gt 0 ]; then
+            echo "::error::The following files are missing CSP meta tags:"
+            printf '%s\n' "${MISSING_CSP[@]}"
+            exit 1
+          fi
+
+          echo "✓ All HTML files have CSP meta tags"
+
+  dependency-check:
+    name: Dependency Security
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check for external scripts
+        run: |
+          echo "Checking for external script references..."
+
+          # Find script tags with src attributes pointing to external URLs
+          EXTERNAL_SCRIPTS=$(grep -rE '<script[^>]+src=["\x27]https?://' --include="*.html" . || true)
+
+          if [ -n "$EXTERNAL_SCRIPTS" ]; then
+            echo "::warning::Found external script references (ensure SRI is present):"
+            echo "$EXTERNAL_SCRIPTS"
+
+            # Check if these have integrity attributes
+            WITHOUT_SRI=$(echo "$EXTERNAL_SCRIPTS" | grep -v 'integrity=' || true)
+
+            if [ -n "$WITHOUT_SRI" ]; then
+              echo "::error::External scripts without SRI (Subresource Integrity):"
+              echo "$WITHOUT_SRI"
+              exit 1
+            fi
+          fi
+
+          echo "✓ No external scripts without SRI found"
+
+      - name: Check for external stylesheets
+        run: |
+          echo "Checking for external stylesheet references..."
+
+          # Find link tags pointing to external CSS (excluding preconnect)
+          EXTERNAL_CSS=$(grep -rE '<link[^>]+href=["\x27]https?://[^>]+stylesheet' --include="*.html" . || true)
+
+          if [ -n "$EXTERNAL_CSS" ]; then
+            echo "::warning::Found external stylesheet references:"
+            echo "$EXTERNAL_CSS"
+
+            # For Google Fonts, we accept this but warn
+            NON_FONT_CSS=$(echo "$EXTERNAL_CSS" | grep -v 'fonts.googleapis.com' || true)
+
+            if [ -n "$NON_FONT_CSS" ]; then
+              echo "::error::Non-font external stylesheets found (should be self-hosted):"
+              echo "$NON_FONT_CSS"
+              exit 1
+            fi
+          fi
+
+          echo "✓ External stylesheet check passed"
+
+  js-security-audit:
+    name: JavaScript Security Audit
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check for dangerous JavaScript patterns
+        run: |
+          echo "Scanning JavaScript for dangerous patterns..."
+
+          DANGEROUS_PATTERNS=(
+            "\.innerHTML\s*="
+            "\.outerHTML\s*="
+            "insertAdjacentHTML\s*\("
+            "document\.write\s*\("
+            "eval\s*\("
+            "new\s+Function\s*\("
+            "setTimeout\s*\(\s*['\"]"
+            "setInterval\s*\(\s*['\"]"
+          )
+
+          FOUND_ISSUES=0
+
+          for pattern in "${DANGEROUS_PATTERNS[@]}"; do
+            MATCHES=$(grep -rEn "$pattern" --include="*.js" . 2>/dev/null || true)
+            if [ -n "$MATCHES" ]; then
+              echo "::error::Dangerous pattern found: $pattern"
+              echo "$MATCHES"
+              FOUND_ISSUES=1
+            fi
+          done
+
+          if [ $FOUND_ISSUES -eq 1 ]; then
+            echo ""
+            echo "Please replace dangerous patterns with safe alternatives:"
+            echo "  - innerHTML → textContent or createElement"
+            echo "  - document.write → DOM manipulation"
+            echo "  - eval → JSON.parse or direct code"
+            echo "  - setTimeout(string) → setTimeout(function)"
+            exit 1
+          fi
+
+          echo "✓ No dangerous JavaScript patterns found"
+
+  inline-script-audit:
+    name: Inline Script Audit
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check inline scripts
+        run: |
+          echo "Checking for inline scripts..."
+
+          # Find inline scripts (not in _includes which contains the approved template)
+          INLINE_SCRIPTS=$(grep -rEn '<script>[^<]+</script>' --include="*.html" . \
+            | grep -v '_includes/' \
+            | grep -v '_layouts/' \
+            | grep -v 'oet-theme-preference' \
+            || true)
+
+          if [ -n "$INLINE_SCRIPTS" ]; then
+            echo "::warning::Found inline scripts outside of approved templates:"
+            echo "$INLINE_SCRIPTS"
+            echo ""
+            echo "If these are intentional, ensure they are:"
+            echo "1. Added to CSP with a sha256 hash, or"
+            echo "2. Moved to an external JavaScript file"
+          fi
+
+          echo "✓ Inline script audit complete"
+
+  link-security:
+    name: Link Security Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check external links for security attributes
+        run: |
+          echo "Checking external links for security attributes..."
+
+          # Find links to external sites
+          EXTERNAL_LINKS=$(grep -rEn 'href=["\x27]https?://(?!oddsageid\.github\.io)' --include="*.html" . || true)
+
+          # Check for missing rel="noopener" on target="_blank" links
+          UNSAFE_LINKS=$(grep -rEn 'target=["\x27]_blank["\x27][^>]*href=["\x27]https?://' --include="*.html" . \
+            | grep -v 'rel=.*noopener' || true)
+
+          if [ -n "$UNSAFE_LINKS" ]; then
+            echo "::error::Links with target=_blank missing rel='noopener':"
+            echo "$UNSAFE_LINKS"
+            exit 1
+          fi
+
+          echo "✓ All external links have proper security attributes"

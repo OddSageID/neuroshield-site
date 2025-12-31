@@ -1,0 +1,53 @@
+<!--
+  Security Headers for Order of Ethical Technologists
+
+  IMPORTANT: GitHub Pages Limitations
+  ====================================
+  These meta-based headers have the following constraints:
+
+  Headers that WORK via meta tags:
+  - Content-Security-Policy (most directives except frame-ancestors, report-uri, sandbox)
+  - X-Frame-Options
+  - Referrer-Policy
+
+  Headers that CANNOT be set via meta tags:
+  - Strict-Transport-Security (HSTS) - GitHub Pages provides this automatically
+  - X-Content-Type-Options - meta tag is ignored by most browsers for this
+  - Cross-Origin-Opener-Policy (COOP)
+  - Cross-Origin-Embedder-Policy (COEP)
+  - Cross-Origin-Resource-Policy (CORP)
+  - Permissions-Policy (limited browser support for meta)
+
+  For full header control, deploy via Cloudflare, Netlify, or Vercel.
+  See docs/THREAT-MODEL.md for details.
+-->
+
+<!-- Content Security Policy -->
+<!--
+  CSP Directive Breakdown:
+  - default-src 'none': Deny all by default (zero-trust)
+  - script-src 'self' 'sha256-...': Only self-hosted scripts + hashed inline script
+  - style-src 'self' 'unsafe-inline': Self styles + inline (needed for theme)
+  - img-src 'self' data:: Self images + inline SVG data URIs
+  - font-src 'self': Self-hosted fonts only (no Google CDN)
+  - connect-src 'self': Only same-origin fetch/XHR
+  - frame-ancestors 'none': Cannot be embedded (clickjacking protection)
+  - base-uri 'self': Prevent base tag injection
+  - form-action 'self': Forms submit only to same origin
+  - upgrade-insecure-requests: Force HTTPS for any HTTP resources
+-->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-WX4a73Q06DtD4MP8BNJwtJf9CJ0IIXsYXadYwOvXEi8='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;">
+
+<!-- X-Frame-Options: Prevent clickjacking (legacy browsers) -->
+<meta http-equiv="X-Frame-Options" content="DENY">
+
+<!-- X-Content-Type-Options: Prevent MIME sniffing -->
+<!-- Note: This meta tag has limited effectiveness; browsers prefer HTTP header -->
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+
+<!-- Referrer Policy: Limit information leakage -->
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<!-- Permissions Policy: Disable unused browser features -->
+<!-- Note: Meta tag support is limited; HTTP header is preferred -->
+<meta http-equiv="Permissions-Policy" content="accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=(), interest-cohort=()">
