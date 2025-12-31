@@ -1,0 +1,16 @@
+- code: en
+  label: EN
+- code: es
+  label: Español
+- code: fr
+  label: Français
+- code: pt
+  label: Português
+- code: de
+  label: Deutsch
+- code: it
+  label: Italiano
+- code: ar
+  label: العربية
+- code: zh-hans
+  label: 中文(简体)

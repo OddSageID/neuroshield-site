@@ -1,0 +1,76 @@
+index:
+  en: /
+  es: /es/
+  fr: /fr/
+  pt: /pt/
+  de: /de/
+  it: /it/
+  ar: /ar/
+  zh-hans: /zh-hans/
+
+faq:
+  en: /faq.html
+  es: /es/faq.html
+  fr: /fr/faq.html
+  pt: /pt/faq.html
+  de: /de/faq.html
+  it: /it/faq.html
+  ar: /ar/faq.html
+  zh-hans: /zh-hans/faq.html
+
+404:
+  en: /404.html
+
+about-displacement-pattern:
+  en: /about/displacement-pattern.html
+
+about-rome-call:
+  en: /about/rome-call.html
+
+accessibility:
+  en: /accessibility.html
+
+case-studies:
+  en: /case-studies.html
+
+contact:
+  en: /contact.html
+
+cookie-notice:
+  en: /cookie-notice.html
+
+faith-leaders-ask:
+  en: /faith-leaders/ask.html
+
+faith-leaders-gap:
+  en: /faith-leaders/gap.html
+
+faith-leaders-problem:
+  en: /faith-leaders/problem.html
+
+faith-leaders-solution:
+  en: /faith-leaders/solution.html
+
+privacy:
+  en: /privacy.html
+
+sources:
+  en: /sources.html
+
+technologists-call:
+  en: /technologists/call.html
+
+technologists-choice:
+  en: /technologists/choice.html
+
+technologists-join:
+  en: /technologists/join.html
+
+technologists-order:
+  en: /technologists/order.html
+
+terms:
+  en: /terms.html
+
+transparency:
+  en: /transparency.html

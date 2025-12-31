@@ -1,0 +1,75 @@
+---
+lang: it
+ref: faq
+title: Domande frequenti
+---
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: 'en' }}" dir="{% if page.lang == 'ar' %}rtl{% else %}ltr{% endif %}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Questa pagina ? un segnaposto di traduzione. La versione inglese ? quella autorevole.">
+  <meta name="author" content="The Order of Ethical Technologists">
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  {% include hreflang.html %}
+
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Permissions-Policy" content="accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=(), interest-cohort=()">
+
+  <title>Domande frequenti | The Order of Ethical Technologists</title>
+
+  <link rel="stylesheet" href="{{ '/css/fonts.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}">
+</head>
+<body class="theme-home">
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  {% include nav.html %}
+
+
+  <header class="hero hero-shared">
+    <div class="container container-wide">
+      <p class="breadcrumb">FAQ</p>
+      <h1>Domande frequenti</h1>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <div class="container">
+      <section class="section">
+        <p>Questa pagina ? un segnaposto di traduzione. La versione inglese ? quella autorevole.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p class="footer-tagline">"Building the Shield, Refusing the Cage"</p>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="{{ '/' | relative_url }}">Home</a>
+      <a href="{{ '/faith-leaders/problem.html' | relative_url }}">For Faith Leaders</a>
+      <a href="{{ '/technologists/call.html' | relative_url }}">For Technologists</a>
+      <a href="{{ '/case-studies.html' | relative_url }}">Case Studies</a>
+      <a href="{{ '/about/rome-call.html' | relative_url }}">Rome Call</a>
+      <a href="{{ '/about/displacement-pattern.html' | relative_url }}">Field Guide</a>
+      <a href="{{ '/faq.html' | relative_url }}">FAQ</a>
+      <a href="{{ '/sources.html' | relative_url }}">Sources</a>
+      <a href="{{ '/contact.html' | relative_url }}">Contact</a>
+    </nav>
+    <nav class="footer-legal" aria-label="Legal links">
+      <a href="{{ '/privacy.html' | relative_url }}">Privacy Policy</a>
+      <a href="{{ '/terms.html' | relative_url }}">Terms of Service</a>
+      <a href="{{ '/accessibility.html' | relative_url }}">Accessibility</a>
+      <a href="{{ '/transparency.html' | relative_url }}">Transparency Report</a>
+      <a href="{{ '/cookie-notice.html' | relative_url }}">Cookie Notice</a>
+    </nav>
+    <p class="footer-copy">&copy; {{ 'now' | date: '%Y' }} The Order of Ethical Technologists. All rights reserved.</p>
+  </footer>
+</body>
+</html>

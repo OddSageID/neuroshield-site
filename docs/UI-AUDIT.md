@@ -1,7 +1,7 @@
 # UI Audit Report
 
 ## Summary
-- Files scanned: 21
+- Files scanned: 35
 - Missing #main-content: 0
 - Pages with invalid h1 count: 0
 - Images missing alt: 0

@@ -1,0 +1,75 @@
+---
+lang: es
+ref: index
+title: La Orden de Tecn?logos ?ticos
+---
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: 'en' }}" dir="{% if page.lang == 'ar' %}rtl{% else %}ltr{% endif %}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Esta p?gina es un marcador de traducci?n. La versi?n en ingl?s es la autorizada.">
+  <meta name="author" content="The Order of Ethical Technologists">
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  {% include hreflang.html %}
+
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Permissions-Policy" content="accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=(), interest-cohort=()">
+
+  <title>La Orden de Tecn?logos ?ticos | The Order of Ethical Technologists</title>
+
+  <link rel="stylesheet" href="{{ '/css/fonts.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}">
+</head>
+<body class="theme-home">
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  {% include nav.html %}
+
+
+  <header class="hero hero-shared">
+    <div class="container container-wide">
+      <h1>La Orden de Tecn?logos ?ticos</h1>
+      <p class="tagline">Espa?ol</p>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <div class="container">
+      <section class="section">
+        <p>Esta p?gina es un marcador de traducci?n. La versi?n en ingl?s es la autorizada.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p class="footer-tagline">"Building the Shield, Refusing the Cage"</p>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="{{ '/' | relative_url }}">Home</a>
+      <a href="{{ '/faith-leaders/problem.html' | relative_url }}">For Faith Leaders</a>
+      <a href="{{ '/technologists/call.html' | relative_url }}">For Technologists</a>
+      <a href="{{ '/case-studies.html' | relative_url }}">Case Studies</a>
+      <a href="{{ '/about/rome-call.html' | relative_url }}">Rome Call</a>
+      <a href="{{ '/about/displacement-pattern.html' | relative_url }}">Field Guide</a>
+      <a href="{{ '/faq.html' | relative_url }}">FAQ</a>
+      <a href="{{ '/sources.html' | relative_url }}">Sources</a>
+      <a href="{{ '/contact.html' | relative_url }}">Contact</a>
+    </nav>
+    <nav class="footer-legal" aria-label="Legal links">
+      <a href="{{ '/privacy.html' | relative_url }}">Privacy Policy</a>
+      <a href="{{ '/terms.html' | relative_url }}">Terms of Service</a>
+      <a href="{{ '/accessibility.html' | relative_url }}">Accessibility</a>
+      <a href="{{ '/transparency.html' | relative_url }}">Transparency Report</a>
+      <a href="{{ '/cookie-notice.html' | relative_url }}">Cookie Notice</a>
+    </nav>
+    <p class="footer-copy">&copy; {{ 'now' | date: '%Y' }} The Order of Ethical Technologists. All rights reserved.</p>
+  </footer>
+</body>
+</html>
