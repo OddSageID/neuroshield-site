@@ -8,11 +8,8 @@
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <nav class="site-nav" aria-label="Main navigation">
-    <div class="container">
-      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">
-        Menu
-      </button>
-      <div id="nav-links" class="nav-links">
+    <div class="container container-wide">
+      <div class="nav-links">
         <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>Home</a>
         <a href="{{ '/faith-leaders/problem.html' | relative_url }}"{% if page.url contains '/faith-leaders/' %} aria-current="page"{% endif %}>For Faith Leaders</a>
         <a href="{{ '/technologists/call.html' | relative_url }}"{% if page.url contains '/technologists/' %} aria-current="page"{% endif %}>For Technologists</a>
