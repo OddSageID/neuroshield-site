@@ -43,6 +43,10 @@ jobs:
 
       - name: Validate CSP in HTML files
         run: |
+          echo "============================================"
+          echo "CSP VALIDATION VERSION: JEKYLL-AWARE v2"
+          echo "============================================"
+          echo ""
           echo "Checking for CSP meta tags in HTML files..."
 
           # First, verify CSP is defined centrally in Jekyll includes

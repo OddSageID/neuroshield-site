@@ -36,13 +36,17 @@ echo "Security Lint Report - $(date)" > "$REPORT_FILE"
 echo "================================" >> "$REPORT_FILE"
 echo "" >> "$REPORT_FILE"
 
+echo "============================================"
+echo "SECURITY-LINT VERSION: JEKYLL-AWARE v2"
+echo "============================================"
+echo ""
 echo "Starting security lint..."
 echo ""
 
 # ============================================
 # 1. CSP Meta Tag Check
 # ============================================
-echo "=== Checking CSP Meta Tags ==="
+echo "=== Checking CSP Meta Tags (excludes _includes/ and _layouts/) ==="
 
 for file in $(find . -name "*.html" -not -path "./_site/*" -not -path "./node_modules/*" -not -path "./.git/*" -not -path "./_includes/*" -not -path "./_layouts/*"); do
     if grep -q 'Content-Security-Policy' "$file"; then
