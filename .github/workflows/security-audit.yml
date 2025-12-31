@@ -44,10 +44,17 @@ jobs:
       - name: Validate CSP in HTML files
         run: |
           echo "Checking for CSP meta tags in HTML files..."
+          echo "Note: Excluding Jekyll partials (_includes/, _layouts/) and build artifacts (_site/)"
 
           MISSING_CSP=()
 
-          for file in $(find . -name "*.html" -not -path "./_site/*" -not -path "./node_modules/*"); do
+          # Exclude Jekyll template directories (partials inherit CSP from parent pages)
+          # Exclude _site/ (build output) and node_modules/ (dependencies)
+          for file in $(find . -name "*.html" \
+            -not -path "./_includes/*" \
+            -not -path "./_layouts/*" \
+            -not -path "./_site/*" \
+            -not -path "./node_modules/*"); do
             if ! grep -q 'Content-Security-Policy' "$file"; then
               MISSING_CSP+=("$file")
             fi
@@ -59,7 +66,7 @@ jobs:
             exit 1
           fi
 
-          echo "✓ All HTML files have CSP meta tags"
+          echo "✓ All standalone HTML content pages have CSP meta tags"
 
   dependency-check:
     name: Dependency Security
