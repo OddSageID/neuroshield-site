@@ -44,8 +44,11 @@ jobs:
       - name: Validate CSP in HTML files
         run: |
           echo "============================================"
-          echo "CSP VALIDATION VERSION: JEKYLL-AWARE v2"
+          echo "CSP VALIDATION VERSION: JEKYLL-AWARE v3"
+          echo "Commit: $(git rev-parse --short HEAD)"
           echo "============================================"
+          echo ""
+          echo "This version EXCLUDES: _includes/, _layouts/, _site/, node_modules/"
           echo ""
           echo "Checking for CSP meta tags in HTML files..."
 
