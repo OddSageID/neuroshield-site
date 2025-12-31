@@ -1,0 +1,9 @@
+{% assign current_ref = page.ref | default: 'index' %}
+{% assign translations = site.data.translations[current_ref] %}
+{% assign index_map = site.data.translations['index'] %}
+{% assign en_canonical = translations['en'] | default: index_map['en'] %}
+{% if page.lang == 'en' %}
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+{% else %}
+<link rel="canonical" href="{{ en_canonical | absolute_url }}">
+{% endif %}

@@ -109,6 +109,11 @@ jobs:
         run: |
           python3 tools/audit_ui.py
 
+      - name: Run i18n check
+        run: |
+          python3 tools/i18n_check.py
+
+
 
   dependency-check:
     name: Dependency Security
