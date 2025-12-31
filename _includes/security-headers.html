@@ -26,8 +26,8 @@
 <!--
   CSP Directive Breakdown:
   - default-src 'none': Deny all by default (zero-trust)
-  - script-src 'self' 'sha256-...': Only self-hosted scripts + hashed inline script
-  - style-src 'self' 'unsafe-inline': Self styles + inline (needed for theme)
+  - script-src 'self': Only self-hosted scripts (no inline, no external)
+  - style-src 'self' 'unsafe-inline': Self styles + inline (needed for theme CSS vars)
   - img-src 'self' data:: Self images + inline SVG data URIs
   - font-src 'self': Self-hosted fonts only (no Google CDN)
   - connect-src 'self': Only same-origin fetch/XHR
@@ -36,7 +36,7 @@
   - form-action 'self': Forms submit only to same origin
   - upgrade-insecure-requests: Force HTTPS for any HTTP resources
 -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-DIACqTmFf77tByRINSgP1ZbACFrR9vjjPMY6e9z4574='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;">
 
 <!-- X-Frame-Options: Prevent clickjacking (legacy browsers) -->
 <meta http-equiv="X-Frame-Options" content="DENY">

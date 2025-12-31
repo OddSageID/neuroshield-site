@@ -34,7 +34,6 @@
 <!-- Main Stylesheet -->
 <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}">
 
-<!-- Critical: Inline Theme Detection Script -->
+<!-- Critical: Theme Detection Script (loaded synchronously to prevent FOUC) -->
 <!-- This script MUST run before body renders to prevent flash of wrong theme -->
-<!-- Hash: sha256-DIACqTmFf77tByRINSgP1ZbACFrR9vjjPMY6e9z4574= (included in CSP) -->
-<script>(function(){var s=localStorage.getItem("oet-theme-preference");var p=window.matchMedia("(prefers-color-scheme: dark)").matches;if(s==="dark"||(!s&&p)){document.documentElement.setAttribute("data-theme","dark");}})()</script>
+<script src="{{ '/js/theme-init.js' | relative_url }}"></script>
