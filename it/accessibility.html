@@ -1,0 +1,103 @@
+---
+lang: it
+ref: accessibility
+---
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: 'en' }}" dir="{% if page.lang == 'ar' %}rtl{% else %}ltr{% endif %}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Security -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Permissions-Policy" content="accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=(), interest-cohort=()">
+  <meta name="description" content="Dichiarazione di accessibilità - The Order of Ethical Technologists si impegna a garantire l'accessibilità digitale per tutti.">
+  <title>Dichiarazione di accessibilità - The Order of Ethical Technologists</title>
+  <link rel="stylesheet" href="{{ '/css/fonts.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}">
+  {% include hreflang.html %}
+</head>
+<body class="theme-home">
+
+  <a href="#main-content" class="skip-link">Vai al contenuto principale</a>
+
+  {% include nav.html %}
+
+  <header class="hero hero-shared">
+    <div class="container container-wide">
+      <h1>Dichiarazione di accessibilità</h1>
+      <p>Ultimo aggiornamento: novembre 2025</p>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <div class="container">
+
+      <section class="section">
+        <div class="callout">
+          <p>L'Ordine dei Tecnologi Etici si impegna a mettere in pratica i principi etici che promuoviamo. Queste politiche riflettono la nostra convinzione fondamentale che la tecnologia debba servire la dignità umana, l'autonomia e la fioritura umana.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <p>L'Ordine dei Tecnologi Etici si impegna a garantire l'accessibilità digitale per tutte le persone, incluse quelle con disabilità. Ci sforziamo di seguire le Linee guida per l'accessibilità dei contenuti web (WCAG) 2.1 al livello AA.</p>
+
+        <div class="pull-quote">
+          Il nostro impegno: l'accessibilità digitale non è solo conformità&mdash;è un imperativo morale. La tecnologia deve servire tutti gli esseri umani, soprattutto coloro che le interfacce tradizionali escludono.
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Misure che adottiamo</h2>
+        <p>Ci impegniamo a:</p>
+        <ul class="check-list">
+          <li>Fornire una navigazione chiara e strutturata</li>
+          <li>Usare font leggibili e palette ad alto contrasto</li>
+          <li>Garantire che le immagini abbiano testi alternativi descrittivi</li>
+          <li>Evitare elementi lampeggianti o animazioni disturbanti</li>
+          <li>Mantenere la compatibilità con gli screen reader</li>
+          <li>Garantire che i moduli siano completamente navigabili da tastiera</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Limitazioni</h2>
+        <p>Alcuni contenuti sono ospitati o renderizzati tramite Google Sites, che può imporre alcuni vincoli di accessibilità. Riesaminiamo continuamente questi limiti e cerchiamo alternative quando necessario.</p>
+      </section>
+
+      <section class="section">
+        <h2>Feedback</h2>
+        <p>Se riscontri barriere di accessibilità, contattaci a:</p>
+        <p><strong>Email:</strong> <a href="mailto:accessibility@orderoftechnologists.org">accessibility@orderoftechnologists.org</a></p>
+        <p>Risponderemo e intraprenderemo azioni correttive ove possibile.</p>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p class="footer-tagline">"Costruire lo scudo, rifiutare la gabbia"</p>
+    <nav class="footer-nav" aria-label="Navigazione del footer">
+      <a href="{{ '/' | relative_url }}">Home</a>
+      <a href="{{ '/faith-leaders/problem.html' | relative_url }}">Per i leader di fede</a>
+      <a href="{{ '/technologists/call.html' | relative_url }}">Per i tecnologi</a>
+      <a href="{{ '/case-studies.html' | relative_url }}">Casi di studio</a>
+      <a href="{{ '/about/rome-call.html' | relative_url }}">Rome Call</a>
+      <a href="{{ '/about/displacement-pattern.html' | relative_url }}">Guida sul campo</a>
+      <a href="{{ '/faq.html' | relative_url }}">FAQ</a>
+      <a href="{{ '/sources.html' | relative_url }}">Fonti</a>
+      <a href="{{ '/contact.html' | relative_url }}">Contatti</a>
+    </nav>
+    <nav class="footer-legal" aria-label="Link legali">
+      <a href="{{ '/privacy.html' | relative_url }}">Informativa sulla privacy</a>
+      <a href="{{ '/terms.html' | relative_url }}">Termini di servizio</a>
+      <a href="{{ '/accessibility.html' | relative_url }}">Accessibilità</a>
+      <a href="{{ '/transparency.html' | relative_url }}">Rapporto di trasparenza</a>
+      <a href="{{ '/cookie-notice.html' | relative_url }}">Informativa sui cookie</a>
+    </nav>
+    <p class="footer-copy">&copy; 2025 The Order of Ethical Technologists. Tutti i diritti riservati.</p>
+  </footer></body>
+</html>

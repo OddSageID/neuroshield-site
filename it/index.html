@@ -1,7 +1,6 @@
 ---
 lang: it
 ref: index
-title: L?Ordine dei Tecnologi Etici
 ---
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: 'en' }}" dir="{% if page.lang == 'ar' %}rtl{% else %}ltr{% endif %}">
@@ -9,11 +8,26 @@ title: L?Ordine dei Tecnologi Etici
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="Questa pagina ? un segnaposto di traduzione. La versione inglese ? quella autorevole.">
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="L'Ordine dei Tecnologi Etici - Un santuario basato sulla fede per costruire IA etica. Tradurre i principi del Rome Call in realtà operativa.">
+  <meta name="keywords" content="IA etica, Rome Call, etica dell'IA, tecnologia basata sulla fede, tecnologi, tecnologia etica">
   <meta name="author" content="The Order of Ethical Technologists">
   <meta name="robots" content="index, follow">
+
+  <!-- Canonical URL -->
   {% include canonical.html %}
-{% include hreflang.html %}
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://oddsageid.github.io/neuroshield-site/">
+  <meta property="og:title" content="L'Ordine dei Tecnologi Etici">
+  <meta property="og:description" content="Un santuario basato sulla fede per costruire IA etica. Tradurre i principi del Rome Call in realtà operativa.">
+  <meta property="og:site_name" content="The Order of Ethical Technologists">
+  <meta property="og:locale" content="it_IT">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="L'Ordine dei Tecnologi Etici">
+  <meta name="twitter:description" content="Un santuario basato sulla fede per costruire IA etica. Tradurre i principi del Rome Call in realtà operativa.">
 
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
@@ -21,54 +35,102 @@ title: L?Ordine dei Tecnologi Etici
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta http-equiv="Permissions-Policy" content="accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=(), interest-cohort=()">
 
-  <title>L?Ordine dei Tecnologi Etici | The Order of Ethical Technologists</title>
+  <title>L'Ordine dei Tecnologi Etici</title>
 
   <link rel="stylesheet" href="{{ '/css/fonts.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}">
+  {% include hreflang.html %}
 </head>
 <body class="theme-home">
 
-  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <a href="#main-content" class="skip-link">Vai al contenuto principale</a>
 
   {% include nav.html %}
 
-
-  <header class="hero hero-shared">
+  <header class="hero hero-home">
     <div class="container container-wide">
-      <h1>L?Ordine dei Tecnologi Etici</h1>
-      <p class="tagline">Italiano</p>
+      <h1>L'Ordine dei Tecnologi Etici</h1>
+      <p class="tagline">Un santuario basato sulla fede per costruire IA etica</p>
     </div>
   </header>
 
   <main id="main-content">
     <div class="container">
-      <section class="section">
-        <p>Questa pagina ? un segnaposto di traduzione. La versione inglese ? quella autorevole.</p>
+
+      <section aria-labelledby="crisis-heading" class="section">
+        <h2 id="crisis-heading">La crisi</h2>
+        <p>Gli attacchi automatizzati superano i sistemi di difesa umani. L'IA sanitaria nega trattamenti a un tasso 16 volte superiore rispetto alla revisione umana. I tecnologi che danno priorità all'etica rispetto al profitto affrontano licenziamenti, liste nere e rovina finanziaria.</p>
+        <p>Il Rome Call for AI Ethics del Vaticano ha stabilito principi. La conferenza del novembre 2025 ha riunito un dialogo globale. Ma i principi senza infrastrutture restano aspirazionali.</p>
+        <p><strong>Il divario tra visione etica e realtà operativa richiede una soluzione.</strong></p>
+      </section>
+
+      <section aria-labelledby="paths-heading" class="section">
+        <h2 id="paths-heading" class="sr-only">Due percorsi possibili</h2>
+        <div class="two-paths">
+
+          <article class="path-card path-sponsor">
+            <h3>Per i leader di fede</h3>
+            <p>State cercando di sponsorizzare il lavoro sull'IA etica?</p>
+            <p>Scoprite come la vostra istituzione può sostenere l'Ordine, offrendo un santuario ai tecnologi sfollati mentre si costruiscono sistemi di IA trasparenti e potenziati dall'uomo, allineati ai principi del Rome Call.</p>
+            <a href="{{ '/faith-leaders/problem.html' | relative_url }}" class="btn btn-sponsor">Per i leader di fede &rarr;</a>
+          </article>
+
+          <article class="path-card path-recruit">
+            <h3>Per i tecnologi</h3>
+            <p>Siete stati messi da parte per aver scelto l'etica al posto del profitto?</p>
+            <p>Scoprite una vocazione protetta che offre sollievo dal debito in cambio della costruzione dei sistemi di IA etica di cui il nostro mondo ha disperatamente bisogno.</p>
+            <a href="{{ '/technologists/call.html' | relative_url }}" class="btn btn-recruit">Per i tecnologi &rarr;</a>
+          </article>
+
+        </div>
+      </section>
+
+      <section aria-labelledby="stats-heading" class="section">
+        <h2 id="stats-heading" class="sr-only">Statistiche chiave</h2>
+
+        <div class="callout callout-stat">
+          <span class="stat-number">50%+</span>
+          <p>del traffico web globale è ora costituito da bot automatizzati (Thales Group, 2025)</p>
+          <p>Le difese tradizionali a velocità umana non possono contrastare attacchi a velocità di macchina.</p>
+        </div>
+
+        <div class="callout callout-stat">
+          <span class="stat-number">16&times;</span>
+          <p>tassi di negazione dell'IA sanitaria rispetto alla revisione umana (AMA, 2025)</p>
+          <p>Tecnologia ottimizzata per il profitto, non per la cura del paziente.</p>
+        </div>
+      </section>
+
+      <section aria-labelledby="quote-heading" class="section">
+        <h2 id="quote-heading" class="sr-only">Dichiarazione di missione</h2>
+        <blockquote class="pull-quote">
+          "La stessa infrastruttura che fornisce conoscenza, sicurezza e cura può anche offrire manipolazione, sorveglianza e negazione. La differenza è la supervisione umana e il contenimento etico."
+        </blockquote>
       </section>
     </div>
   </main>
 
   <footer class="site-footer">
-    <p class="footer-tagline">"Building the Shield, Refusing the Cage"</p>
-    <nav class="footer-nav" aria-label="Footer navigation">
+    <p class="footer-tagline">"Costruire lo scudo, rifiutare la gabbia"</p>
+    <nav class="footer-nav" aria-label="Navigazione del footer">
       <a href="{{ '/' | relative_url }}">Home</a>
-      <a href="{{ '/faith-leaders/problem.html' | relative_url }}">For Faith Leaders</a>
-      <a href="{{ '/technologists/call.html' | relative_url }}">For Technologists</a>
-      <a href="{{ '/case-studies.html' | relative_url }}">Case Studies</a>
+      <a href="{{ '/faith-leaders/problem.html' | relative_url }}">Per i leader di fede</a>
+      <a href="{{ '/technologists/call.html' | relative_url }}">Per i tecnologi</a>
+      <a href="{{ '/case-studies.html' | relative_url }}">Casi di studio</a>
       <a href="{{ '/about/rome-call.html' | relative_url }}">Rome Call</a>
-      <a href="{{ '/about/displacement-pattern.html' | relative_url }}">Field Guide</a>
+      <a href="{{ '/about/displacement-pattern.html' | relative_url }}">Guida sul campo</a>
       <a href="{{ '/faq.html' | relative_url }}">FAQ</a>
-      <a href="{{ '/sources.html' | relative_url }}">Sources</a>
-      <a href="{{ '/contact.html' | relative_url }}">Contact</a>
+      <a href="{{ '/sources.html' | relative_url }}">Fonti</a>
+      <a href="{{ '/contact.html' | relative_url }}">Contatti</a>
     </nav>
-    <nav class="footer-legal" aria-label="Legal links">
-      <a href="{{ '/privacy.html' | relative_url }}">Privacy Policy</a>
-      <a href="{{ '/terms.html' | relative_url }}">Terms of Service</a>
-      <a href="{{ '/accessibility.html' | relative_url }}">Accessibility</a>
-      <a href="{{ '/transparency.html' | relative_url }}">Transparency Report</a>
-      <a href="{{ '/cookie-notice.html' | relative_url }}">Cookie Notice</a>
+    <nav class="footer-legal" aria-label="Link legali">
+      <a href="{{ '/privacy.html' | relative_url }}">Informativa sulla privacy</a>
+      <a href="{{ '/terms.html' | relative_url }}">Termini di servizio</a>
+      <a href="{{ '/accessibility.html' | relative_url }}">Accessibilità</a>
+      <a href="{{ '/transparency.html' | relative_url }}">Rapporto di trasparenza</a>
+      <a href="{{ '/cookie-notice.html' | relative_url }}">Informativa sui cookie</a>
     </nav>
-    <p class="footer-copy">&copy; {{ 'now' | date: '%Y' }} The Order of Ethical Technologists. All rights reserved.</p>
+    <p class="footer-copy">&copy; {{ 'now' | date: '%Y' }} The Order of Ethical Technologists. Tutti i diritti riservati.</p>
   </footer>
 </body>
 </html>
